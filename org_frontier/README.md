@@ -95,6 +95,10 @@ methods, probes, results, and a paper.
 - [`thinkers/`](thinkers/) — one paper per historical thinker on the triad: the claims read from the primary
   texts, rendered as Boolean forms, tested against exact Φ. First paper: Simmel. The paper standard is
   [`thinkers/PAPER_STANDARD.md`](thinkers/PAPER_STANDARD.md).
+- [`ergodicity/`](ergodicity/) — Ergodicity × Algorithmacy: when ensemble statistics about coordination
+  transfer to an individual trajectory and when they do not. Open track; first cell
+  [`studies/ergodic_components_vs_phi/`](studies/ergodic_components_vs_phi/); essay
+  [`essays/ergodicity_and_algorithmacy.md`](essays/ergodicity_and_algorithmacy.md).
 
 ## Essays — [`essays/`](essays/)
 
@@ -103,6 +107,8 @@ methods, probes, results, and a paper.
   it has established, and what it cannot do. The repo-specific methodology essay.
 - [`literacy_or_algorithmacy.md`](essays/literacy_or_algorithmacy.md) — the thesis and how exact Φ decides
   which literacy a coordination form demands.
+- [`ergodicity_and_algorithmacy.md`](essays/ergodicity_and_algorithmacy.md) — navigating a platform is a
+  non-ergodic problem; navigating a text is not. The dynamical twin of the literacy / algorithmacy cut.
 - [`pyphi_org_theory_catalog.md`](essays/pyphi_org_theory_catalog.md) — a ~10k-word catalog of every
   experiment, with question/hypothesis/method/result.
 - [`algorithmacy_outreach_paper.md`](essays/algorithmacy_outreach_paper.md) — the capstone synthesis:

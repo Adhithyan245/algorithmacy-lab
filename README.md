@@ -126,6 +126,7 @@ Cross-program essays and reviews — the best places to start window-shopping.
 - [Committee panel review — "Committed determination: one axis across six exact-Φ studies"](org_frontier/essays/committed_determination_committee_review.md)
 - [Committed determination: one axis across six exact-Φ studies of Boolean coordination models](org_frontier/essays/committed_determination_synthesis.md)
 - [Committee panel review — "Integrated information as a cooperative game"](org_frontier/essays/cooperative_game_committee_review.md)
+- [Navigating a platform is a non-ergodic problem](org_frontier/essays/ergodicity_and_algorithmacy.md)
 - [The seam carries what the scalar drops: a review of the floor-to-seam program (Q45–Q62)](org_frontier/essays/floor_to_seam_review.md)
 - [What integrated information adds to the theories of coordinating minds](org_frontier/essays/integrated_information_and_coordinating_minds.md)
 - [Lateness and intermittency: how a mediator's timing shapes irreducibility](org_frontier/essays/lateness_and_intermittency.md)
@@ -163,6 +164,7 @@ Cross-program essays and reviews — the best places to start window-shopping.
 - [Paper pipeline — turning paper-less work into full-package research papers](org_frontier/PAPER_PIPELINE.md) — the plan to turn paper-less work into full papers
 - [50 new research questions (v2 agenda)](org_frontier/RESEARCH_AGENDA_50_V2.md) — the v2 agenda — all fifty answered; open threads are in OVERVIEW.md
 - [Research agenda v4 — questions only](org_frontier/RESEARCH_AGENDA_V4.md) — the v4 agenda — #1–#10 answered, #11–#12 open
+- [Ergodicity × Algorithmacy](org_frontier/ergodicity/README.md) — Ergodicity × Algorithmacy — open track; text vs platform as skew-product cut
 
 ### Handoff packets — pick one up and run it
 
@@ -315,6 +317,7 @@ Multi-experiment batteries on one theme.
 - **[n=5 encoding ladder — HMC / literacy → algorithmacy](org_frontier/studies/encoding_ladder_n5/README.md)** — complex **2 → 3 → 4** while wholes stay dyadic. Core Φ can reach 3 on the
 - **[n=6 encoding ladder — does Φ track n−1?](org_frontier/studies/encoding_ladder_n6/README.md)** — as n=5: assist grows the core **2 → 3 → 4 → 5** with dyadic wholes; the
 - **[Endogenous coalition (#30)](org_frontier/studies/endogenous_coalition/README.md)** — maximize own major-complex membership, pure Nash are **all-out** and
+- **[Ergodic components vs Φ (track first cell)](org_frontier/studies/ergodic_components_vs_phi/README.md)**
 - **[Fielded W × Φ landmark (agenda V4 #6)](org_frontier/studies/fielded_w_landmark/README.md)** — still predicts HUB / RING4 / POOL (acc=1.000), but a **fielded rater-
 - **[Fixed-k atoms 5/9 at n=5](org_frontier/studies/fixed_k_atoms_n5/README.md)** — omit-derangements at fixed_k=3 give full-core triadic Φ=9.0. Atom **Φ=5** is a
 - **[FN-tail feature redesign](org_frontier/studies/fn_tail_feature_redesign/README.md)** — F28-motivated cheap fragility and algebraic table features to the Probe-125/131
