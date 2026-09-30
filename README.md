@@ -320,6 +320,7 @@ Multi-experiment batteries on one theme.
 - **[ergodic_absorbing_ejection (Strand D4)](org_frontier/studies/ergodic_absorbing_ejection/README.md)** — absorbing inactive attractor (cycle `000`, basin **7**, exit rate **0**,
 - **[ergodic_backcoupling_twins (Strand A4)](org_frontier/studies/ergodic_backcoupling_twins/README.md)** — vs accumulating split on all three twin pairs (**H1 SUPPORTED**). At
 - **[Ergodic components vs Φ (track first cell)](org_frontier/studies/ergodic_components_vs_phi/README.md)** — `CROSS_BASIN_SPLIT` | `BASIN_DETERMINATION_SPLIT`). Whole-form triadic
+- **[ergodic_eoa_instrument (Strand G / T8 stress)](org_frontier/studies/ergodic_eoa_instrument/README.md)** — panel the EoA instrument agrees with whole-form Φ on **17/42** forms
 - **[ergodic_eoa_vs_phi (Strand G2)](org_frontier/studies/ergodic_eoa_vs_phi/README.md)** — logs agrees with whole-form Φ on **7/9** forms (agree rate **0.778**;
 - **[ergodic_sticky_returns (Strand F4)](org_frontier/studies/ergodic_sticky_returns/README.md)** — sticky−memoryless = **0.0661** (≥ 0.05) remains (**H2 SUPPORTED**)
 - **[Fielded W × Φ landmark (agenda V4 #6)](org_frontier/studies/fielded_w_landmark/README.md)** — still predicts HUB / RING4 / POOL (acc=1.000), but a **fielded rater-
