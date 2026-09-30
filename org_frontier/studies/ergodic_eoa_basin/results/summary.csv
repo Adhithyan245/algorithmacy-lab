@@ -1,0 +1,2 @@
+mode_run,h1,h2,h3,h4,h5,verdict,n_multi_prior,n_multi_rescued,multi_rescue_share,n_single_prior,n_single_rescued,single_rescue_share,basin_agree_rate,basin_tp,basin_tn,basin_fp,basin_fn,basin_auc,basin_rho,stat_agree_rate,stat_tp,stat_tn,stat_fp,stat_fn,stat_auc,stat_rho,uniform_agree_rate,basin_g2_agree_noise0,basin_g2_agree_noise05,n_flip_agreeing_to_breaking
+full,SUPPORTED,SUPPORTED,REFUTED,SUPPORTED,SUPPORTED,EOA_BASIN_INCONCLUSIVE,20,20,1.000000,5,5,1.000000,0.595238,0,25,0,17,0.729412,0.330387,0.595238,0,25,0,17,0.707059,0.273266,0.404762,0.222222,0.666667,4

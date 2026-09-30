@@ -1,0 +1,4 @@
+mode,tp,tn,fp,fn,n_agree,n_forms,agree_rate,auc,spearman_rho,spearman_p,n_breaking,n_agreeing_verdict
+uniform,17,0,25,0,17,42,0.40476190,0.49294118,-0.01379680,0.94350000,42,0
+basin,0,25,0,17,25,42,0.59523810,0.72941176,0.33038728,0.02500000,0,42
+stationary,0,25,0,17,25,42,0.59523810,0.70705882,0.27326600,0.07150000,0,42

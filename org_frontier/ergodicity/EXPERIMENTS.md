@@ -246,6 +246,16 @@ sticky, maj3 (dyadic multi-attractor).
 dyadic×multi (H2 SUPPORTED); verdict `EOA_TRACKS_MI_NOT_PHI`. Does not
 rewrite the G2 cell above.
 
+**Status (basin / stationary fix).** Run —
+`studies/ergodic_eoa_basin/`. Extends `eoa.py` with `reference_mode ∈
+{uniform, basin, stationary}` (uniform unchanged). On the same frozen
+42-form panel, basin rescues 20/20 prior dya×multi FPs and stationary
+rescues 5/5 single-attractor mismatches; both modes are all-AGREEING
+(agree 25/42); binary H3 REFUTED; continuous gap AUC under basin 0.729
+(H4 SUPPORTED); noise arm H5 SUPPORTED; verdict
+`EOA_BASIN_INCONCLUSIVE`. Does not rewrite the G2 or instrument-stress
+cells above.
+
 ---
 
 ## Exp-H — Ensemble vs time-average RL renderings (Strand H / T9)
@@ -351,7 +361,7 @@ PR.
 | Exp-D | D | yes | `studies/ergodic_absorbing_ejection/` |
 | Exp-E | E | yes (with B) | folded into first cell + E4 report |
 | Exp-F | F | yes | `studies/ergodic_sticky_returns/` |
-| Exp-G | G | yes | `studies/ergodic_eoa_vs_phi/` + `studies/ergodic_eoa_instrument/` |
+| Exp-G | G | yes | `studies/ergodic_eoa_vs_phi/` + `studies/ergodic_eoa_instrument/` + `studies/ergodic_eoa_basin/` |
 | Exp-C | C | simulation only | deferred (no calibrated series in PR) |
 | Exp-H | H | partial | deferred pending render convention |
 | Exp-I | I | review only | deferred empirical |
