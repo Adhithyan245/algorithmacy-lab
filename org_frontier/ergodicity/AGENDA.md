@@ -4,7 +4,8 @@ Forty questions in ten strands. Each entry states the question, why it matters
 for algorithmacy, a candidate method, and what would support or falsify it.
 Questions marked **computable now** can run on existing lab code (classifier,
 corpus, `studies/genuine_bistability/`, PyPhi exact IIT-4.0) without new
-instrumentation. No results are reported here.
+instrumentation. Status tags on computable questions: **run** (FINDINGS
+landed), **open** (not yet run).
 
 Source framing: Connaughton, Jeroen, and Paillusson (2026 working notes) on
 ergodicity for the Phil. Trans. R. Soc. A theme issue; the lab thesis that
@@ -61,7 +62,9 @@ difference flip the literacy / algorithmacy demand?
   content fixed.
 - *Method.* Computational: Boolean twin forms, one with S′ independent of
   (W,C) history beyond the current convey, one with S′ depending on accumulated
-  state; classify Φ_MIP. **Computable now.**
+  state; classify Φ_MIP. **Computable now. Status: run** —
+  `studies/ergodic_backcoupling_twins/` → `BACKCOUPLING_SPLITS`
+  (H3 strong accum⇒triadic refuted).
 - *Support / falsify.* Support: convey twin dyadic; accumulating twin triadic
   (or the reverse, if clean). Falsify: both verdicts identical across a
   designed panel.
@@ -81,7 +84,8 @@ and basins — than dyadic forms (Φ_MIP = 0) on matched Boolean panels?
   dyadic/triadic panel; compare component counts and basin entropy by verdict.
   Builds on `studies/genuine_bistability/`. First cell:
   [`../studies/ergodic_components_vs_phi/`](../studies/ergodic_components_vs_phi/).
-  **Computable now.**
+  **Computable now. Status: run** → `NO_ERGODIC_SIGNATURE` (H1/H2 refuted;
+  mean n_components tri 2.1429 vs dya 2.0000).
 - *Support / falsify.* Support: triadic forms have strictly higher mean
   component count (or basin entropy) than dyadic forms on the panel, past a
   pre-registered margin. Falsify: no difference, or dyadic forms have more.
@@ -94,7 +98,8 @@ mediator (Φ_MIP > 0)?
 - *Method.* Computational: for each form, compute per-party occupancy time
   averages from each basin vs the uniform (or invariant) ensemble average;
   test whether |time − ensemble| exceeds a threshold more often when
-  Φ_MIP > 0. **Computable now.**
+  Φ_MIP > 0. **Computable now. Status: run** (same first cell; H3 refuted —
+  div_frac tri 0.9333 vs dya 1.0000).
 - *Support / falsify.* Support: divergence rate higher for triadic forms.
   Falsify: divergence rate independent of verdict, or higher for dyadic forms.
 
@@ -106,7 +111,8 @@ in determine the literacy vs algorithmacy demand for that trajectory?
   competence demand — the sharpest version of "initial conditions select the
   component."
 - *Method.* Computational: reuse the coexistence panel; report Φ_MIP by
-  attractor, not by whole-form max. **Computable now.**
+  attractor, not by whole-form max. **Computable now. Status: run** (first
+  cell H4 SUPPORTED — CROSS_BASIN_SPLIT on all 6 coexistence forms).
 - *Support / falsify.* Support: at least one form has a triadic attractor and a
   dyadic attractor with nonempty basins (already the coexistence claim), and
   party time averages differ across basins. Falsify: coexistence without
@@ -225,8 +231,8 @@ absorbing component?
 
 - *Why it matters.* Bridges ruin language to the lab's exact-Φ ejection studies.
 - *Method.* Computational: extend ejection-order encodings with an absorbing
-  ejected attractor; classify basins and Φ_MIP. **Computable now** (encoding
-  design + existing classifier).
+  ejected attractor; classify basins and Φ_MIP. **Computable now. Status:
+  run** — `studies/ergodic_absorbing_ejection/` → `ABSORBING_EJECTION`.
 - *Support / falsify.* Support: ejected attractor is dyadic or null-core and
   absorbing; pre-ejection attractors remain triadic. Falsify: no clean absorbing
   split, or Φ verdict unrelated to ejection.
@@ -272,7 +278,8 @@ user enters, holding the recommender fixed?
 - *Why it matters.* Connects bubbles to the lab's determination / major-complex
   vocabulary.
 - *Method.* Computational: for multistable forms, report major-complex and
-  party time averages per attractor. **Computable now.**
+  party time averages per   attractor. **Computable now. Status: run** (first cell E4 SUPPORTED —
+  8/8 multistable forms disagree on core or occupancy).
 - *Support / falsify.* Support: basins disagree on core membership or on party
   occupancy. Falsify: all basins share the same core and occupancy profile.
 
@@ -319,7 +326,9 @@ predict engagement hysteresis?
 - *Why it matters.* Reuses probe #109 / bistability machinery as a finite
   caricature of infinite-ergodic stickiness.
 - *Method.* Computational: sticky vs memoryless panel; compare return times to
-  low-activity states and basin sizes. **Computable now.**
+  low-activity states and basin sizes. **Computable now. Status: run** —
+  `studies/ergodic_sticky_returns/` → `HYSTERESIS_ONLY` (H1 return/mass
+  clause refuted; #109 gap remains).
 - *Support / falsify.* Support: sticky forms show longer return times /
   larger inactive basins than memoryless. Falsify: no difference.
 
@@ -344,7 +353,9 @@ on designed Boolean forms instrumented with synthetic "logs"?
 
 - *Why it matters.* Calibration bridge between operational tests and exact Φ.
 - *Method.* Computational: simulate trajectories from corpus forms; run EoA on
-  party observables; compare to Φ_MIP. **Computable now.**
+  party observables; compare to Φ_MIP. **Computable now. Status: run** —
+  `studies/ergodic_eoa_vs_phi/` → `EOA_AGREES_PHI` (7/9; sticky FAIL×dyadic
+  witness).
 - *Support / falsify.* Support: agreement above a pre-registered rate.
   Falsify: agreement at chance.
 
@@ -528,6 +539,11 @@ vs platform-like (algorithmacy required)?
 
 ## First cell
 
-Run Strand B's attractor / component questions on existing infrastructure.
-Spec: [`../studies/ergodic_components_vs_phi/`](../studies/ergodic_components_vs_phi/).
-Hypotheses fixed before computing. No numbers in this agenda.
+Strand B attractor / component questions on existing infrastructure:
+[`../studies/ergodic_components_vs_phi/`](../studies/ergodic_components_vs_phi/).
+**Status: run.** Verdict `NO_ERGODIC_SIGNATURE` with secondary
+`CROSS_BASIN_SPLIT` | `BASIN_DETERMINATION_SPLIT`. Companion computable
+cells A4/D4/F4/G2 also run (see study FINDINGS). Theories and experiment
+designs: [`THEORIES.md`](THEORIES.md), [`EXPERIMENTS.md`](EXPERIMENTS.md).
+Deferred: C (needs calibrated series), H (needs RL render), I empirical,
+J field.

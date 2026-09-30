@@ -1,0 +1,10 @@
+form,attr_id,cycle,basin,exit_rate,absorbing,inactive_S0,all_zero,verdict,max_phi
+memoryless,0,000,3,0.00000000,1,1,1,dyadic,0.00000000
+memoryless,1,010|101,4,0.00000000,1,0,0,dyadic,0.00000000
+memoryless,2,111,1,0.00000000,1,0,0,triadic,2.00000000
+ejected_latch,0,000,7,0.00000000,1,1,1,dyadic,0.00000000
+ejected_latch,1,111,1,0.00000000,1,0,0,triadic,2.00000000
+ejected_latch_or,0,000,5,0.00000000,1,1,1,dyadic,0.00000000
+ejected_latch_or,1,111,3,0.00000000,1,0,0,dyadic,0.00000000
+sticky,0,000,3,0.00000000,1,1,1,dyadic,0.00000000
+sticky,1,111,5,0.00000000,1,0,0,dyadic,0.00000000

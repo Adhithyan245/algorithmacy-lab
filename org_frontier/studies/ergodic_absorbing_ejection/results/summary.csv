@@ -1,0 +1,2 @@
+h1,h2,h3,verdict,reading
+SUPPORTED,SUPPORTED,SUPPORTED,ABSORBING_EJECTION,ABSORBING_EJECTION — ejected_latch absorbing inactive=True; Φ split=True; sticky not pure ejection=True
