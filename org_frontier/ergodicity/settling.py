@@ -19,8 +19,17 @@ Measures (definitions frozen by studies that import them):
     spectral gap of the row-stochastic TPM and the implied relaxation
     time 1/gap (independent of the deterministic basin partition).
 
+(d) **Attractor oscillation** — fraction of (party-bit × attractor)
+    cells where the bit is non-constant on the cycle; mean Bernoulli
+    variance of party bits on cycles; mean / max period.
+
+(e) **Pre-cycle path diversity** — mean over starts of the number of
+    distinct party-bit tuples visited strictly before cycle entry,
+    scaled by ``2^{n_parties}`` into [0, 1].
+
 Covariates recorded alongside: attractor periods, number of attractors,
-state-space size.
+state-space size. Extensions (d)–(e) are backward compatible: prior
+call sites and summaries are unchanged.
 """
 
 from __future__ import annotations
@@ -97,6 +106,38 @@ class MixingSummary:
     eps_flip: float
     tv_delta: float
     n_states: int
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class OscillationSummary:
+    """Party-bit oscillation on attractor cycles (phase-artifact covariate)."""
+
+    party_osc_frac: float  # non-constant (party × cycle) / (n_parties × n_cycles)
+    mean_cycle_var: float  # mean p(1-p) over (party × cycle) cells
+    mean_period: float  # basin-mass-weighted mean cycle length over ens
+    max_period: int
+    n_attractors: int
+    n_party_bits: int
+    n_oscillating_cells: int
+    n_cells: int
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class PathDiversitySummary:
+    """Within-basin pre-cycle observable heterogeneity."""
+
+    pre_cycle_div: float  # mean |distinct party tuples on transient| / 2^{n_p}
+    mean_distinct: float  # unscaled mean distinct count
+    mean_transient: float
+    n_starts: int
+    n_party_bits: int
+    scale: int  # 2^{n_party_bits}
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -393,6 +434,123 @@ def summarize_mixing(
         eps_flip=eps_flip,
         tv_delta=tv_delta,
         n_states=len(nxt),
+    )
+
+
+def summarize_oscillation(
+    form: Union[NextMap, Rules],
+    party_indices: Sequence[int],
+    *,
+    ensemble: Optional[Sequence[State]] = None,
+    n: Optional[int] = None,
+) -> OscillationSummary:
+    """Party-bit non-constancy and cycle variance on attractors.
+
+    ``party_osc_frac`` is the fraction of (party-bit × attractor-cycle)
+    cells where the bit takes more than one value on the cycle.
+    ``mean_cycle_var`` is the mean of ``p(1-p)`` over the same cells,
+    where ``p`` is the uniform mean of the bit on the cycle.
+    ``mean_period`` is the ensemble-averaged cycle length (basin-mass
+    weighted when ``ensemble`` is the full state space).
+    """
+    nxt, n = _resolve_form(form, n)
+    ens = uniform_ensemble(n) if ensemble is None else list(ensemble)
+    part = attractor_partition(nxt)
+    cycles = part["cycles"]
+    n_parties = len(party_indices)
+    n_cells = n_parties * len(cycles)
+    n_osc = 0
+    var_sum = 0.0
+    if n_cells == 0:
+        return OscillationSummary(
+            party_osc_frac=float("nan"),
+            mean_cycle_var=float("nan"),
+            mean_period=float("nan"),
+            max_period=0,
+            n_attractors=0,
+            n_party_bits=n_parties,
+            n_oscillating_cells=0,
+            n_cells=0,
+        )
+    for cyc in cycles:
+        for idx in party_indices:
+            vals = [float(st[idx]) for st in cyc]
+            p = sum(vals) / float(len(vals))
+            var_sum += p * (1.0 - p)
+            if min(vals) != max(vals):
+                n_osc += 1
+    period_sum = 0.0
+    for s in ens:
+        period_sum += len(part["cycle_of_state"][s])
+    mean_period = period_sum / float(len(ens)) if ens else float("nan")
+    periods = [len(c) for c in cycles]
+    return OscillationSummary(
+        party_osc_frac=n_osc / float(n_cells),
+        mean_cycle_var=var_sum / float(n_cells),
+        mean_period=mean_period,
+        max_period=max(periods) if periods else 0,
+        n_attractors=len(cycles),
+        n_party_bits=n_parties,
+        n_oscillating_cells=n_osc,
+        n_cells=n_cells,
+    )
+
+
+def summarize_pre_cycle_diversity(
+    form: Union[NextMap, Rules],
+    party_indices: Sequence[int],
+    *,
+    ensemble: Optional[Sequence[State]] = None,
+    n: Optional[int] = None,
+) -> PathDiversitySummary:
+    """Mean pre-cycle party-tuple diversity over an ensemble of starts.
+
+    For each start, walk the deterministic map until the first revisit
+    (cycle entry). Collect party-bit tuples on states visited *strictly
+    before* the cycle; count distinct tuples; scale by ``2^{n_parties}``.
+    Starts already on a cycle contribute 0. The form-level covariate is
+    the mean of those scaled counts.
+    """
+    nxt, n = _resolve_form(form, n)
+    ens = uniform_ensemble(n) if ensemble is None else list(ensemble)
+    n_parties = len(party_indices)
+    scale = 1 << n_parties if n_parties > 0 else 1
+    distincts: list[int] = []
+    transients: list[int] = []
+    for start in ens:
+        L = transient_length(nxt, start)
+        transients.append(L)
+        if L == 0:
+            distincts.append(0)
+            continue
+        # Replay the transient path and collect party tuples.
+        cur = start
+        seen: set = set()
+        party_set: set = set()
+        for _ in range(L):
+            if cur in seen:
+                break
+            seen.add(cur)
+            party_set.add(tuple(int(cur[i]) for i in party_indices))
+            cur = nxt[cur]
+        distincts.append(len(party_set))
+    if not ens:
+        return PathDiversitySummary(
+            pre_cycle_div=float("nan"),
+            mean_distinct=float("nan"),
+            mean_transient=float("nan"),
+            n_starts=0,
+            n_party_bits=n_parties,
+            scale=scale,
+        )
+    mean_d = sum(distincts) / float(len(distincts))
+    return PathDiversitySummary(
+        pre_cycle_div=mean_d / float(scale),
+        mean_distinct=mean_d,
+        mean_transient=sum(transients) / float(len(transients)),
+        n_starts=len(ens),
+        n_party_bits=n_parties,
+        scale=scale,
     )
 
 

@@ -548,7 +548,12 @@ cells A4/D4/F4/G2 also run (see study FINDINGS). G-strand stress follow-on
 T8's ≥0.65 agreement on a 42-form panel (`EOA_TRACKS_MI_NOT_PHI`). The
 per-outcome follow-on `studies/ergodic_eoa_basin/` clears those miss
 classes under basin/stationary references but collapses binary EoA to
-all-AGREEING (`EOA_BASIN_INCONCLUSIVE`). Theories
+all-AGREEING (`EOA_BASIN_INCONCLUSIVE`). Settling-time residual
+`studies/ergodic_settling_time/` does not explain the remaining
+continuous gap (`SETTLING_NULL`). Gap decomposition
+`studies/ergodic_gap_decomposition/` finds the association is not a
+fluke but is unexplained by phase / path / observable / panel
+mechanisms (`GAP_UNEXPLAINED`). Theories
 and experiment designs: [`THEORIES.md`](THEORIES.md),
 [`EXPERIMENTS.md`](EXPERIMENTS.md). Deferred: C (needs calibrated series),
 H (needs RL render), I empirical, J field.

@@ -284,9 +284,15 @@ all-AGREEING (agree 25/42 = dyadic base rate); verdict
 basin-mode gap–Φ association is finite-T burn-in: mean transient does
 not separate triadic from dyadic (AUC 0.540), and controlling for
 transient does not shrink the gap association; verdict `SETTLING_NULL`.
-T8's field-instrument ambition does not survive as a binary Φ proxy once
-multistability is conditioned out, and the residual continuous signal is
-not a settling-time confound on this panel.
+The gap-decomposition cell (`ergodic_gap_decomposition`) tests whether
+finite-T phase artifact, within-basin path diversity, party-vs-mediator
+observable choice, or panel composition absorbs the residual continuous
+association: the association is not a fluke (AUC 0.729; bootstrap CI
+[0.560, 0.862]; permutation p 0.0075), but none of the four mechanisms
+passes; verdict `GAP_UNEXPLAINED`. T8's field-instrument ambition does
+not survive as a binary Φ proxy once multistability is conditioned out,
+and the residual continuous signal is neither a settling-time confound
+nor explained by the pre-registered gap decompositions on this panel.
 
 ---
 
@@ -371,7 +377,7 @@ ensemble advice matching or beating trajectory-conditioned advice.
 | Ruin raises algorithmacy's marginal value; ejected Φ split | **conjecture** (T5) |
 | Bubbles = components; basins disagree on core | **conjecture** (T6) |
 | Sticky forms caricature infinite-ergodic stickiness | **conjecture** (T7) |
-| Operational EoA agrees with Φ on synthetic logs | **partial** (T8): G2 7/9 supported; 42-form stress **refutes** ≥0.65 — EoA tracks MI / dyadic×multi, not Φ; basin/stationary fix clears those FPs but binary EoA collapses (`EOA_BASIN_INCONCLUSIVE`); settling-time residual does not explain the remaining continuous gap (`SETTLING_NULL`) |
+| Operational EoA agrees with Φ on synthetic logs | **partial** (T8): G2 7/9 supported; 42-form stress **refutes** ≥0.65 — EoA tracks MI / dyadic×multi, not Φ; basin/stationary fix clears those FPs but binary EoA collapses (`EOA_BASIN_INCONCLUSIVE`); settling-time residual does not explain the remaining continuous gap (`SETTLING_NULL`); gap decomposition leaves the residual unexplained (`GAP_UNEXPLAINED`) |
 | Ensemble RL / cooption / rendered Φ differences | **conjecture** (T9) |
 | Idiographic assessment; triadic team divergence | **conjecture** (T10) |
 
