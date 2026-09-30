@@ -279,8 +279,14 @@ The per-outcome follow-on (`ergodic_eoa_basin`) clears those miss classes
 under basin-restricted and attractor-stationary references (20/20 multi
 and 5/5 single rescued) but collapses the binary instrument to
 all-AGREEING (agree 25/42 = dyadic base rate); verdict
-`EOA_BASIN_INCONCLUSIVE`. T8's field-instrument ambition does not survive
-as a binary Φ proxy once multistability is conditioned out.
+`EOA_BASIN_INCONCLUSIVE`. The settling-time residual cell
+(`ergodic_settling_time`) tests whether the remaining continuous
+basin-mode gap–Φ association is finite-T burn-in: mean transient does
+not separate triadic from dyadic (AUC 0.540), and controlling for
+transient does not shrink the gap association; verdict `SETTLING_NULL`.
+T8's field-instrument ambition does not survive as a binary Φ proxy once
+multistability is conditioned out, and the residual continuous signal is
+not a settling-time confound on this panel.
 
 ---
 
@@ -365,7 +371,7 @@ ensemble advice matching or beating trajectory-conditioned advice.
 | Ruin raises algorithmacy's marginal value; ejected Φ split | **conjecture** (T5) |
 | Bubbles = components; basins disagree on core | **conjecture** (T6) |
 | Sticky forms caricature infinite-ergodic stickiness | **conjecture** (T7) |
-| Operational EoA agrees with Φ on synthetic logs | **partial** (T8): G2 7/9 supported; 42-form stress **refutes** ≥0.65 — EoA tracks MI / dyadic×multi, not Φ; basin/stationary fix clears those FPs but binary EoA collapses (`EOA_BASIN_INCONCLUSIVE`) |
+| Operational EoA agrees with Φ on synthetic logs | **partial** (T8): G2 7/9 supported; 42-form stress **refutes** ≥0.65 — EoA tracks MI / dyadic×multi, not Φ; basin/stationary fix clears those FPs but binary EoA collapses (`EOA_BASIN_INCONCLUSIVE`); settling-time residual does not explain the remaining continuous gap (`SETTLING_NULL`) |
 | Ensemble RL / cooption / rendered Φ differences | **conjecture** (T9) |
 | Idiographic assessment; triadic team divergence | **conjecture** (T10) |
 
