@@ -6416,7 +6416,7 @@
       "name": "ergodic-eoa-instrument-unit",
       "cmd": "python -m org_frontier.ergodicity.test_eoa",
       "expect": [
-        "Ran 6 tests",
+        "Ran 11 tests",
         "OK"
       ],
       "timeout": 30,
@@ -6437,6 +6437,40 @@
       ],
       "timeout": 120,
       "source": "org_frontier/studies/ergodic_eoa_instrument/FINDINGS.md"
+    },
+    {
+      "name": "ergodic-eoa-basin-ci",
+      "cmd": "python org_frontier/studies/ergodic_eoa_basin/analyze_basin.py --ci",
+      "expect": [
+        "memoryless whole: triadic Φ=2.000000  PASS",
+        "sticky whole:     dyadic Φ=0.000000  PASS",
+        "REFERENCE MODE: basin",
+        "REFERENCE MODE: stationary",
+        "H1 (basin rescues ≥0.75 of prior dya×multi):  SUPPORTED",
+        "H5 (basin noise arm restores signal):         NOT_TESTABLE"
+      ],
+      "timeout": 90,
+      "source": "org_frontier/studies/ergodic_eoa_basin/FINDINGS.md"
+    },
+    {
+      "name": "ergodic-eoa-basin-full",
+      "cmd": "python org_frontier/studies/ergodic_eoa_basin/analyze_basin.py",
+      "expect": [
+        "memoryless whole: triadic Φ=2.000000  PASS",
+        "sticky whole:     dyadic Φ=0.000000  PASS",
+        "H1 (basin rescues ≥0.75 of prior dya×multi):  SUPPORTED",
+        "H2 (stationary rescues ≥0.80 of prior dya×1): SUPPORTED",
+        "H3 (agreement ≥0.65 basin|stationary):        REFUTED",
+        "H4 (AUC≥0.65 or |ρ|≥0.30):                    SUPPORTED",
+        "H5 (basin noise arm restores signal):         SUPPORTED",
+        "verdict: EOA_BASIN_INCONCLUSIVE",
+        "basin agree=0.595",
+        "stationary agree=0.595",
+        "prior multi rescued=20/20",
+        "prior single rescued=5/5"
+      ],
+      "timeout": 180,
+      "source": "org_frontier/studies/ergodic_eoa_basin/FINDINGS.md"
     }
   ]
 }

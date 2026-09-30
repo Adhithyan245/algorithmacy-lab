@@ -8,6 +8,17 @@ an uncertainty estimate and a binary verdict:
     AGREEING  — fail rate < τ  (ergodic-agreeing under the reference measure)
     BREAKING  — fail rate ≥ τ  (EoA-breaking)
 
+Reference modes (``reference_mode``):
+
+    uniform     — one global ensemble mean of f on starts (legacy default;
+                  matches G2 / ``ergodic_eoa_instrument``).
+    basin       — each trajectory compared to the mean of time averages
+                  among ensemble starts in the same zero-noise basin
+                  (clears cross-basin polarization false positives).
+    stationary  — each trajectory compared to ∫f dμ on the attractor it
+                  reaches (uniform on the deterministic cycle; unique
+                  stationary of the flip-noise chain when noise > 0).
+
 Decision thresholds ``ε_div`` and ``τ`` are arguments; studies that use this
 instrument must freeze them in a hypotheses file *before* the stress run.
 Default values match G2 / ``ergodic_eoa_instrument``: ε_div=0.1, τ=0.25.
@@ -19,7 +30,7 @@ when comparing to the literacy / algorithmacy cut.
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
-from typing import Callable, Iterable, Optional, Sequence, Union
+from typing import Callable, Optional, Sequence, Union
 
 import math
 import random
@@ -35,6 +46,11 @@ DEFAULT_EPS_DIV = 0.1
 DEFAULT_FAIL_RATE_THRESH = 0.25
 DEFAULT_HORIZON = 64
 
+REFERENCE_UNIFORM = "uniform"
+REFERENCE_BASIN = "basin"
+REFERENCE_STATIONARY = "stationary"
+REFERENCE_MODES = (REFERENCE_UNIFORM, REFERENCE_BASIN, REFERENCE_STATIONARY)
+
 
 @dataclass(frozen=True)
 class EoAResult:
@@ -42,10 +58,10 @@ class EoAResult:
 
     verdict: str                 # "AGREEING" | "BREAKING"
     fail_rate: float
-    gap_mean: float              # mean |time_avg − ens_avg|
+    gap_mean: float              # mean |time_avg − reference|
     gap_std: float               # sample std of per-trajectory gaps
     gap_se: float                # gap_std / sqrt(n)
-    ensemble_mean: float
+    ensemble_mean: float         # reported reference (mode-dependent)
     n_trajectories: int
     n_fail: int
     eps_div: float
@@ -53,6 +69,7 @@ class EoAResult:
     horizon: int
     noise: float
     observable_name: str
+    reference_mode: str = REFERENCE_UNIFORM
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -191,6 +208,209 @@ def trajectory_time_average(
     return sum(observable(st) for st in series) / float(len(series))
 
 
+# ---------------------------------------------------------------------------
+# Basin / attractor reference helpers (no Φ)
+# ---------------------------------------------------------------------------
+
+def attractor_partition(nxt: NextMap) -> dict:
+    """Zero-noise attractor partition of a finite deterministic next-map.
+
+    Returns dict with:
+      cycles: list of cycle tuples (canonical rotation)
+      basin_of: state → cycle index
+      basin_states: cycle index → frozenset of states draining to that cycle
+      cycle_of_state: state → the cycle tuple it reaches
+    """
+    cycle_key_of: dict[State, frozenset] = {}
+    cycles_by_key: dict[frozenset, tuple] = {}
+    states = list(nxt.keys())
+    for start_state in states:
+        cur = start_state
+        path: list[State] = []
+        vis: dict[State, int] = {}
+        while cur not in vis:
+            if cur in cycle_key_of:
+                break
+            vis[cur] = len(path)
+            path.append(cur)
+            cur = nxt[cur]
+        if cur in vis:
+            cyc = tuple(path[vis[cur] :])
+            key = frozenset(cyc)
+            cyc_c = min(tuple(cyc[i:] + cyc[:i]) for i in range(len(cyc)))
+            cycles_by_key[key] = cyc_c
+            for st in cyc:
+                cycle_key_of[st] = key
+
+    # Map every state to its cycle key via forward walk.
+    for start_state in states:
+        if start_state in cycle_key_of:
+            continue
+        cur = start_state
+        visited: set[State] = set()
+        while cur not in visited:
+            if cur in cycle_key_of:
+                break
+            visited.add(cur)
+            cur = nxt[cur]
+        key = cycle_key_of[cur]
+        for st in visited:
+            cycle_key_of[st] = key
+
+    keys = list(cycles_by_key.keys())
+    key_to_idx = {k: i for i, k in enumerate(keys)}
+    cycles = [cycles_by_key[k] for k in keys]
+    basin_of = {st: key_to_idx[cycle_key_of[st]] for st in states}
+    basin_states: dict[int, set] = {i: set() for i in range(len(keys))}
+    for st, idx in basin_of.items():
+        basin_states[idx].add(st)
+    cycle_of_state = {
+        st: cycles[basin_of[st]] for st in states
+    }
+    return {
+        "cycles": cycles,
+        "basin_of": basin_of,
+        "basin_states": {i: frozenset(s) for i, s in basin_states.items()},
+        "cycle_of_state": cycle_of_state,
+    }
+
+
+def cycle_mean(observable: Observable, cycle: Sequence[State]) -> float:
+    """Uniform mean of ``observable`` on a deterministic cycle."""
+    if not cycle:
+        return float("nan")
+    return sum(observable(st) for st in cycle) / float(len(cycle))
+
+
+def noisy_transition_matrix(nxt: NextMap, noise: float) -> list[list[float]]:
+    """Row-stochastic matrix for one step of ``nxt`` with bit-flip noise.
+
+    With prob 1−noise: follow the deterministic image. With prob noise:
+    flip exactly one uniformly chosen bit of the image.
+    """
+    states = list(nxt.keys())
+    n = len(states[0])
+    index = {st: i for i, st in enumerate(states)}
+    m = len(states)
+    P = [[0.0] * m for _ in range(m)]
+    for st in states:
+        i = index[st]
+        img = nxt[st]
+        if noise <= 0.0:
+            P[i][index[img]] = 1.0
+            continue
+        P[i][index[img]] += 1.0 - noise
+        for bit in range(n):
+            flipped = list(img)
+            flipped[bit] = 1 - flipped[bit]
+            j = index[tuple(flipped)]
+            P[i][j] += noise / float(n)
+    return P
+
+
+def stationary_distribution(P: Sequence[Sequence[float]], tol: float = 1e-12) -> list[float]:
+    """Unique stationary distribution of a finite irreducible chain (power iter).
+
+    Falls back to the normalized left-eigenvector via iterative multiply
+    starting from uniform; adequate for small Boolean state spaces.
+    """
+    m = len(P)
+    if m == 0:
+        return []
+    pi = [1.0 / m] * m
+    for _ in range(10000):
+        nxt = [0.0] * m
+        for i in range(m):
+            pi_i = pi[i]
+            row = P[i]
+            for j in range(m):
+                nxt[j] += pi_i * row[j]
+        diff = sum(abs(nxt[j] - pi[j]) for j in range(m))
+        pi = nxt
+        s = sum(pi)
+        if s <= 0:
+            return [1.0 / m] * m
+        pi = [x / s for x in pi]
+        if diff < tol:
+            break
+    return pi
+
+
+def stationary_mean(
+    observable: Observable,
+    nxt: NextMap,
+    noise: float = 0.0,
+) -> float:
+    """Mean of ``observable`` under the chain's stationary distribution."""
+    states = list(nxt.keys())
+    if noise <= 0.0:
+        # Mixture of attractor measures weighted by basin mass (not used as
+        # per-trajectory reference; callers prefer per-attractor cycle means).
+        part = attractor_partition(nxt)
+        total = 0.0
+        for idx, cyc in enumerate(part["cycles"]):
+            mass = len(part["basin_states"][idx]) / float(len(states))
+            total += mass * cycle_mean(observable, cyc)
+        return total
+    P = noisy_transition_matrix(nxt, noise)
+    pi = stationary_distribution(P)
+    return sum(pi[i] * observable(states[i]) for i in range(len(states)))
+
+
+def _summarize_gaps(
+    gaps: list[float],
+    *,
+    eps_div: float,
+    fail_rate_thresh: float,
+    horizon: int,
+    noise: float,
+    observable_name: str,
+    ensemble_mean: float,
+    reference_mode: str,
+) -> EoAResult:
+    n_traj = len(gaps)
+    n_fail = sum(1 for g in gaps if g > eps_div)
+    fail_rate = n_fail / float(n_traj) if n_traj else float("nan")
+    gap_mean = sum(gaps) / float(n_traj) if n_traj else float("nan")
+    if n_traj > 1:
+        var = sum((g - gap_mean) ** 2 for g in gaps) / float(n_traj - 1)
+        gap_std = math.sqrt(var)
+        gap_se = gap_std / math.sqrt(n_traj)
+    else:
+        gap_std = 0.0
+        gap_se = 0.0
+    verdict = "BREAKING" if fail_rate >= fail_rate_thresh else "AGREEING"
+    return EoAResult(
+        verdict=verdict,
+        fail_rate=fail_rate,
+        gap_mean=gap_mean,
+        gap_std=gap_std,
+        gap_se=gap_se,
+        ensemble_mean=ensemble_mean,
+        n_trajectories=n_traj,
+        n_fail=n_fail,
+        eps_div=eps_div,
+        fail_rate_thresh=fail_rate_thresh,
+        horizon=horizon,
+        noise=noise,
+        observable_name=observable_name,
+        reference_mode=reference_mode,
+    )
+
+
+def _resolve_form(
+    form: Union[NextMap, Rules], n: Optional[int]
+) -> tuple[NextMap, int]:
+    if isinstance(form, dict):
+        nxt = form
+        if n is None:
+            n = len(next(iter(nxt.keys())))
+        return nxt, n
+    nxt = rules_to_next_map(form, n=n)
+    n_out = len(form) if n is None else n
+    return nxt, n_out
+
+
 def run_eoa(
     form: Union[NextMap, Rules],
     observable: Observable,
@@ -204,73 +424,111 @@ def run_eoa(
     seed: int = 0,
     observable_name: str = "f",
     ensemble_mean_value: Optional[float] = None,
+    reference_mode: str = REFERENCE_UNIFORM,
 ) -> EoAResult:
     """Run the EoA instrument.
 
     ``form`` may be a next-map ``dict[state→state]`` or a list of Boolean
     rules. ``ensemble`` defaults to the full uniform state space. When
-    ``ensemble_mean_value`` is supplied it overrides the empirical ensemble
-    mean (use for a theoretically fixed reference measure).
+    ``ensemble_mean_value`` is supplied under ``reference_mode='uniform'``
+    it overrides the empirical ensemble mean (theoretically fixed
+    reference). ``reference_mode`` selects uniform / basin / stationary
+    (see module docstring).
     """
-    if isinstance(form, dict):
-        nxt = form
-        if n is None:
-            n = len(next(iter(nxt.keys())))
-    else:
-        nxt = rules_to_next_map(form, n=n)
-        n = len(form) if n is None else n
-
-    if ensemble is None:
-        ens = uniform_ensemble(n)
-    else:
-        ens = list(ensemble)
-
-    ens_mean = (
-        float(ensemble_mean_value)
-        if ensemble_mean_value is not None
-        else ensemble_mean(observable, ens)
-    )
-
-    rng = random.Random(seed)
-    gaps: list[float] = []
-    n_fail = 0
-    for start in ens:
-        # Independent RNG stream per start for noisy runs; deterministic ignores it.
-        local = random.Random(rng.randrange(2**31 - 1))
-        t_avg = trajectory_time_average(
-            nxt, start, observable, horizon=horizon, noise=noise, rng=local
+    if reference_mode not in REFERENCE_MODES:
+        raise ValueError(
+            f"reference_mode must be one of {REFERENCE_MODES}, got {reference_mode!r}"
         )
-        gap = abs(t_avg - ens_mean)
-        gaps.append(gap)
-        if gap > eps_div:
-            n_fail += 1
+    nxt, n = _resolve_form(form, n)
+    ens = uniform_ensemble(n) if ensemble is None else list(ensemble)
+    rng = random.Random(seed)
 
-    n_traj = len(gaps)
-    fail_rate = n_fail / float(n_traj) if n_traj else float("nan")
-    gap_mean = sum(gaps) / float(n_traj) if n_traj else float("nan")
-    if n_traj > 1:
-        var = sum((g - gap_mean) ** 2 for g in gaps) / float(n_traj - 1)
-        gap_std = math.sqrt(var)
-        gap_se = gap_std / math.sqrt(n_traj)
-    else:
-        gap_std = 0.0
-        gap_se = 0.0
+    # Per-start time averages (shared across modes).
+    t_avgs: list[float] = []
+    for start in ens:
+        local = random.Random(rng.randrange(2**31 - 1))
+        t_avgs.append(
+            trajectory_time_average(
+                nxt, start, observable, horizon=horizon, noise=noise, rng=local
+            )
+        )
 
-    verdict = "BREAKING" if fail_rate >= fail_rate_thresh else "AGREEING"
-    return EoAResult(
-        verdict=verdict,
-        fail_rate=fail_rate,
-        gap_mean=gap_mean,
-        gap_std=gap_std,
-        gap_se=gap_se,
-        ensemble_mean=ens_mean,
-        n_trajectories=n_traj,
-        n_fail=n_fail,
+    if reference_mode == REFERENCE_UNIFORM:
+        ens_mean = (
+            float(ensemble_mean_value)
+            if ensemble_mean_value is not None
+            else ensemble_mean(observable, ens)
+        )
+        gaps = [abs(t - ens_mean) for t in t_avgs]
+        return _summarize_gaps(
+            gaps,
+            eps_div=eps_div,
+            fail_rate_thresh=fail_rate_thresh,
+            horizon=horizon,
+            noise=noise,
+            observable_name=observable_name,
+            ensemble_mean=ens_mean,
+            reference_mode=reference_mode,
+        )
+
+    part = attractor_partition(nxt)
+
+    if reference_mode == REFERENCE_BASIN:
+        # Reference = mean of time averages among starts in the same basin.
+        basin_buckets: dict[int, list[float]] = {}
+        basin_ids = [part["basin_of"][s] for s in ens]
+        for bid, t in zip(basin_ids, t_avgs):
+            basin_buckets.setdefault(bid, []).append(t)
+        basin_ref = {bid: sum(vs) / len(vs) for bid, vs in basin_buckets.items()}
+        gaps = [abs(t - basin_ref[bid]) for t, bid in zip(t_avgs, basin_ids)]
+        # Report the mean absolute deviation from per-basin refs as the
+        # scalar "ensemble_mean" stand-in is not a single number; use the
+        # average of basin references weighted by basin start counts.
+        report = sum(
+            basin_ref[bid] * len(vs) for bid, vs in basin_buckets.items()
+        ) / float(len(ens))
+        return _summarize_gaps(
+            gaps,
+            eps_div=eps_div,
+            fail_rate_thresh=fail_rate_thresh,
+            horizon=horizon,
+            noise=noise,
+            observable_name=observable_name,
+            ensemble_mean=report,
+            reference_mode=reference_mode,
+        )
+
+    # stationary
+    if noise > 0.0:
+        ref = stationary_mean(observable, nxt, noise=noise)
+        gaps = [abs(t - ref) for t in t_avgs]
+        return _summarize_gaps(
+            gaps,
+            eps_div=eps_div,
+            fail_rate_thresh=fail_rate_thresh,
+            horizon=horizon,
+            noise=noise,
+            observable_name=observable_name,
+            ensemble_mean=ref,
+            reference_mode=reference_mode,
+        )
+    gaps = []
+    refs = []
+    for start, t in zip(ens, t_avgs):
+        cyc = part["cycle_of_state"][start]
+        ref = cycle_mean(observable, cyc)
+        refs.append(ref)
+        gaps.append(abs(t - ref))
+    report = sum(refs) / float(len(refs)) if refs else float("nan")
+    return _summarize_gaps(
+        gaps,
         eps_div=eps_div,
         fail_rate_thresh=fail_rate_thresh,
         horizon=horizon,
         noise=noise,
         observable_name=observable_name,
+        ensemble_mean=report,
+        reference_mode=reference_mode,
     )
 
 
@@ -286,76 +544,81 @@ def run_eoa_parties(
     fail_rate_thresh: float = DEFAULT_FAIL_RATE_THRESH,
     n: Optional[int] = None,
     seed: int = 0,
+    reference_mode: str = REFERENCE_UNIFORM,
 ) -> EoAResult:
     """EoA pooled over several party-bit observables (G2-style).
 
     Each (start, party) cell is one trajectory cell. Fail rate is the
     fraction of cells with |gap| > ε_div. Verdict uses the same τ.
+    ``reference_mode`` is applied per party observable.
     """
-    if isinstance(form, dict):
-        nxt = form
-        if n is None:
-            n = len(next(iter(nxt.keys())))
-    else:
-        nxt = rules_to_next_map(form, n=n)
-        n = len(form) if n is None else n
+    if reference_mode not in REFERENCE_MODES:
+        raise ValueError(
+            f"reference_mode must be one of {REFERENCE_MODES}, got {reference_mode!r}"
+        )
+    nxt, n = _resolve_form(form, n)
+    ens = uniform_ensemble(n) if ensemble is None else list(ensemble)
 
-    if ensemble is None:
-        ens = uniform_ensemble(n)
-    else:
-        ens = list(ensemble)
-
-    rng = random.Random(seed)
     gaps: list[float] = []
-    n_fail = 0
-    for start in ens:
-        for idx in party_indices:
-            name = labels[idx] if labels else str(idx)
-            obs = bit_observable(idx)
-            # Ensemble mean of a bit under uniform-on-X is 0.5; under a
-            # restricted ensemble, compute empirically.
-            ens_mean = ensemble_mean(obs, ens)
+    rng = random.Random(seed)
+    part = (
+        attractor_partition(nxt)
+        if reference_mode in (REFERENCE_BASIN, REFERENCE_STATIONARY)
+        else None
+    )
+    # Precompute per-party time averages and references.
+    for idx in party_indices:
+        obs = bit_observable(idx)
+        t_avgs = []
+        for start in ens:
             local = random.Random(rng.randrange(2**31 - 1))
-            t_avg = trajectory_time_average(
-                nxt, start, obs, horizon=horizon, noise=noise, rng=local
+            t_avgs.append(
+                trajectory_time_average(
+                    nxt, start, obs, horizon=horizon, noise=noise, rng=local
+                )
             )
-            gap = abs(t_avg - ens_mean)
-            gaps.append(gap)
-            if gap > eps_div:
-                n_fail += 1
-
-    n_traj = len(gaps)
-    fail_rate = n_fail / float(n_traj) if n_traj else float("nan")
-    gap_mean = sum(gaps) / float(n_traj) if n_traj else float("nan")
-    if n_traj > 1:
-        var = sum((g - gap_mean) ** 2 for g in gaps) / float(n_traj - 1)
-        gap_std = math.sqrt(var)
-        gap_se = gap_std / math.sqrt(n_traj)
-    else:
-        gap_std = 0.0
-        gap_se = 0.0
+        if reference_mode == REFERENCE_UNIFORM:
+            ens_mean = ensemble_mean(obs, ens)
+            for t in t_avgs:
+                gaps.append(abs(t - ens_mean))
+        elif reference_mode == REFERENCE_BASIN:
+            assert part is not None
+            basin_ids = [part["basin_of"][s] for s in ens]
+            buckets: dict[int, list[float]] = {}
+            for bid, t in zip(basin_ids, t_avgs):
+                buckets.setdefault(bid, []).append(t)
+            refs = {bid: sum(vs) / len(vs) for bid, vs in buckets.items()}
+            for t, bid in zip(t_avgs, basin_ids):
+                gaps.append(abs(t - refs[bid]))
+        else:  # stationary
+            assert part is not None
+            if noise > 0.0:
+                ref = stationary_mean(obs, nxt, noise=noise)
+                for t in t_avgs:
+                    gaps.append(abs(t - ref))
+            else:
+                for start, t in zip(ens, t_avgs):
+                    cyc = part["cycle_of_state"][start]
+                    gaps.append(abs(t - cycle_mean(obs, cyc)))
 
     obs_name = (
         "{" + ",".join(labels[i] if labels else str(i) for i in party_indices) + "}"
     )
-    verdict = "BREAKING" if fail_rate >= fail_rate_thresh else "AGREEING"
     # Ensemble mean is not a single scalar when pooling bits; report 0.5 when
-    # the ensemble is the full uniform space (standard G2 reference).
-    ens_mean_report = 0.5 if len(ens) == 2**n else float("nan")
-    return EoAResult(
-        verdict=verdict,
-        fail_rate=fail_rate,
-        gap_mean=gap_mean,
-        gap_std=gap_std,
-        gap_se=gap_se,
-        ensemble_mean=ens_mean_report,
-        n_trajectories=n_traj,
-        n_fail=n_fail,
+    # the ensemble is the full uniform space under uniform mode (G2).
+    if reference_mode == REFERENCE_UNIFORM and len(ens) == 2**n:
+        ens_mean_report = 0.5
+    else:
+        ens_mean_report = float("nan")
+    return _summarize_gaps(
+        gaps,
         eps_div=eps_div,
         fail_rate_thresh=fail_rate_thresh,
         horizon=horizon,
         noise=noise,
         observable_name=obs_name,
+        ensemble_mean=ens_mean_report,
+        reference_mode=reference_mode,
     )
 
 
