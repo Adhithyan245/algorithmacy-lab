@@ -348,9 +348,11 @@ def spectral_gap(P: Sequence[Sequence[float]]) -> float:
     mags = sorted((abs(complex(z)) for z in w), reverse=True)
     lam2 = mags[1] if len(mags) > 1 else 0.0
     gap = 1.0 - float(lam2)
-    if gap < 0.0 and gap > -1e-12:
+    # Numerical floor: gaps below 1e-10 are treated as 0 (reducible /
+    # non-mixing under float64 eigendecomposition of small Boolean TPMs).
+    if gap < 1e-10:
         gap = 0.0
-    return max(0.0, gap)
+    return gap
 
 
 def relaxation_time_from_gap(gap: float) -> float:

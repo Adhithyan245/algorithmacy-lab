@@ -68,8 +68,10 @@ idiographic measurement problem.
 | [`../studies/ergodic_sticky_returns/`](../studies/ergodic_sticky_returns/) | F4: sticky return times / inactive basins |
 | [`../studies/ergodic_eoa_vs_phi/`](../studies/ergodic_eoa_vs_phi/) | G2: operational EoA vs Φ on synthetic logs |
 | [`eoa.py`](eoa.py) | Reusable EoA instrument (`run_eoa` / `run_eoa_parties`; `reference_mode ∈ {uniform,basin,stationary}`) |
+| [`settling.py`](settling.py) | Settling-time measures (transient length, convergence T, noisy spectral gap) |
 | [`../studies/ergodic_eoa_instrument/`](../studies/ergodic_eoa_instrument/) | G stress: instrument + wider panel vs Φ |
 | [`../studies/ergodic_eoa_basin/`](../studies/ergodic_eoa_basin/) | G follow-on: basin/stationary reference fix vs Φ |
+| [`../studies/ergodic_settling_time/`](../studies/ergodic_settling_time/) | G residual: settling time vs residual basin-mode EoA gap |
 | [`../essays/ergodicity_and_algorithmacy.md`](../essays/ergodicity_and_algorithmacy.md) | Short essay introducing the crossover |
 
 ## Relation to standing arcs
