@@ -136,7 +136,7 @@ _EMPIRICAL = [
 ]
 _COMPUTATIONAL_ARMS = ["classifier", "corpus", "multiparty", "principal", "proxy_bridge",
                        "landscape", "outreach", "protocol", "llm_variance", "research", "reviews",
-                       "thinkers"]
+                       "thinkers", "ergodicity"]
 _SUBMISSIONS = [
     ("submissions", "Outward manuscripts — IGI, Hospitality & Society, Lima, Slacker, OT, Hegel"),
     ("submissions/coordinative_sovereignty", None),
