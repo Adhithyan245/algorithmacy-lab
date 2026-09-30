@@ -34,11 +34,13 @@ average|?
   PHI_EPS vs ≤ PHI_EPS (exact binary IIT-4.0). Whole-form verdict = lab
   classifier on the form.
 
-**Panel (designed; candid).** Primary n=3 labels (W, S, C). Include at
-minimum: memoryless triad, sticky, xor_memory, or_commit, parity_hub, maj3,
-plus at least two known corpus dyadic forms and two known corpus triadic
-forms. Exact membership list is frozen in the commit that adds
-`analyze_components.py`, before that script is run.
+**Panel (frozen before computing).** Primary n=3 labels (W, S, C). Exact
+membership (9 forms): memoryless, sticky, xor_memory, or_commit, sticky_or,
+sticky_parity, parity_hub, maj3, w_follows_c. These reuse the
+`genuine_bistability` encodings so dyadic witnesses include sticky and maj3
+and triadic witnesses include memoryless, xor_memory, or_commit, sticky_or,
+sticky_parity, parity_hub, and w_follows_c (whole-form verdicts confirmed by
+the instrument at run time, not asserted here).
 
 **Instrument gate.** Faithful memoryless triad whole-form triadic;
 sticky whole-form dyadic (matches #43). Abort the comparison if either gate
