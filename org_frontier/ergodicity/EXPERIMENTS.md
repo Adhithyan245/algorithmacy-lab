@@ -256,6 +256,17 @@ rescues 5/5 single-attractor mismatches; both modes are all-AGREEING
 `EOA_BASIN_INCONCLUSIVE`. Does not rewrite the G2 or instrument-stress
 cells above.
 
+**Status (settling-time residual).** Run —
+`studies/ergodic_settling_time/`. Instrument in `ergodicity/settling.py`
+(transient length, time-average convergence T, noisy-chain spectral
+gap). On the same frozen 42-form panel, mean transient does not
+separate triadic from dyadic (AUC 0.540; H1 REFUTED); Spearman with Φ
+ρ=0.051 (H2 REFUTED); controlling for transient does not shrink the
+basin-mode gap's association with triadic / Φ (H3 REFUTED); noisy
+relaxation AUC 0.338 (H4 REFUTED); confound checks fail (H5 REFUTED);
+verdict `SETTLING_NULL`. Does not rewrite the G2, instrument-stress, or
+basin cells above.
+
 ---
 
 ## Exp-H — Ensemble vs time-average RL renderings (Strand H / T9)
