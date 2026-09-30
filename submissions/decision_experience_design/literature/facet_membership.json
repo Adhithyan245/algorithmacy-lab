@@ -1,0 +1,613 @@
+{
+"wilkinson2023dx": [
+"F1"
+],
+"audryNDdx": [
+"F1"
+],
+"itera2025dx": [
+"F1"
+],
+"putri2025dx": [
+"F1"
+],
+"pastagia2026dx": [
+"F1"
+],
+"dscc2026dx": [
+"F1"
+],
+"rupashree2026decision": [
+"F1"
+],
+"peterson2022decision": [
+"F1"
+],
+"wolf1991decision": [
+"F1"
+],
+"ohare1998cognitive": [
+"F1"
+],
+"thordsen2003decision": [
+"F1",
+"F3"
+],
+"militello2013decision": [
+"F1"
+],
+"hasic2018augmenting": [
+"F1"
+],
+"pratt2019link": [
+"F1"
+],
+"thaler2008nudge": [
+"F1",
+"F2"
+],
+"johnson2012beyond": [
+"F1",
+"F2"
+],
+"schneider2018digital": [
+"F1",
+"F2"
+],
+"weinmann2016digital": [
+"F1",
+"F2"
+],
+"caraban2019ways": [
+"F1",
+"F2"
+],
+"santos2021consumer": [
+"F1"
+],
+"verganti2020innovation": [
+"F1"
+],
+"lai2023science": [
+"F1",
+"F5"
+],
+"alvarado2017towards": [
+"F1"
+],
+"alvarado2018towards": [
+"F1",
+"F6"
+],
+"alvarado2019really": [
+"F1"
+],
+"shin2020beyond": [
+"F1",
+"F6"
+],
+"klumbyte2020reframing": [
+"F1"
+],
+"dove2017ux": [
+"F1"
+],
+"yang2018investigating": [
+"F1"
+],
+"yang2020reexamining": [
+"F1"
+],
+"szlachta2024navigating": [
+"F1"
+],
+"flechtner2023ai": [
+"F1"
+],
+"li2024user": [
+"F1"
+],
+"shalamova2026ai": [
+"F1"
+],
+"alvarez2026upskilling": [
+"F1"
+],
+"longmagerko2020": [
+"F1",
+"F6"
+],
+"oeldorfhirsch2025": [
+"F1",
+"F6"
+],
+"simon1955behavioral": [
+"F2"
+],
+"simon1956rational": [
+"F2"
+],
+"todd2003bounding": [
+"F2"
+],
+"kahneman2003maps": [
+"F2"
+],
+"tversky1981framing": [
+"F2"
+],
+"thaler2018nudge": [
+"F2"
+],
+"johnson2003defaults": [
+"F2"
+],
+"chandrashekar2023defaults": [
+"F2"
+],
+"jachimowicz2019defaults": [
+"F2"
+],
+"dallacker2024optout": [
+"F2"
+],
+"arshad2019comparison": [
+"F2"
+],
+"iyengar2000choice": [
+"F2"
+],
+"scheibehenne2010choice": [
+"F2"
+],
+"chernev2015choice": [
+"F2"
+],
+"mertens2022effectiveness": [
+"F2"
+],
+"mertens2022correction": [
+"F2"
+],
+"maier2022noevidence": [
+"F2"
+],
+"szaszi2022noreason": [
+"F2"
+],
+"mertens2022reply": [
+"F2"
+],
+"dellavigna2022rcts": [
+"F2"
+],
+"hertwig2017nudging": [
+"F2",
+"F6"
+],
+"kozyreva2020citizens": [
+"F2",
+"F6"
+],
+"lorenzspreen2020behavioural": [
+"F2"
+],
+"callaway2022leveraging": [
+"F2"
+],
+"sunstein2020sludge": [
+"F2"
+],
+"gray2018dark": [
+"F2"
+],
+"mathur2019dark": [
+"F2"
+],
+"mathur2021dark": [
+"F2"
+],
+"yeung2017hypernudge": [
+"F2"
+],
+"mills2022finding": [
+"F2"
+],
+"mills2022autonomous": [
+"F2"
+],
+"susser2019technology": [
+"F2"
+],
+"lanzing2019strongly": [
+"F2"
+],
+"schmidt2020ethics": [
+"F2"
+],
+"michaelsen2024experiencing": [
+"F2"
+],
+"gorry1971framework": [
+"F3"
+],
+"keen1978decision": [
+"F3"
+],
+"sprague1980framework": [
+"F3"
+],
+"arnott2005critical": [
+"F3"
+],
+"arnott2014critical": [
+"F3"
+],
+"phillipswren2022support": [
+"F3"
+],
+"pathirannehelage2024design": [
+"F3"
+],
+"klein1993recognition": [
+"F3"
+],
+"klein2008naturalistic": [
+"F3"
+],
+"kahneman2009conditions": [
+"F3"
+],
+"peringa2026why": [
+"F3"
+],
+"simkute2021explainability": [
+"F3"
+],
+"allen2022algorithm": [
+"F3"
+],
+"banker2019algorithm": [
+"F3"
+],
+"militello1998applied": [
+"F3"
+],
+"militello2016designing": [
+"F3"
+],
+"crandall2006working": [
+"F3"
+],
+"rasmussen1983skills": [
+"F3"
+],
+"vicente1992ecological": [
+"F3"
+],
+"vicente1999cognitive": [
+"F3"
+],
+"endsley1995toward": [
+"F3"
+],
+"endsleykiris1995out": [
+"F3"
+],
+"hollnagel1983cognitive": [
+"F3"
+],
+"woods1985cognitive": [
+"F3"
+],
+"hollnagel2005joint": [
+"F3"
+],
+"woods2006joint": [
+"F3"
+],
+"klein2004ten": [
+"F3"
+],
+"bainbridge1983ironies": [
+"F3"
+],
+"norman1990problem": [
+"F3",
+"F4"
+],
+"lee2004trust": [
+"F3",
+"F5"
+],
+"endsley2023ironies": [
+"F3"
+],
+"strauch2018ironies": [
+"F3"
+],
+"janssen2019history": [
+"F3"
+],
+"carsten2018how": [
+"F3"
+],
+"fitts1954information": [
+"F4"
+],
+"mackenzie1992fitts": [
+"F4"
+],
+"hick1952rate": [
+"F4"
+],
+"hyman1953stimulus": [
+"F4"
+],
+"dewinter2014fitts": [
+"F4"
+],
+"card1980keystroke": [
+"F4"
+],
+"card1983psychology": [
+"F4"
+],
+"norman1986cognitive": [
+"F4"
+],
+"hutchins1985direct": [
+"F4"
+],
+"norman2013design": [
+"F4"
+],
+"miller1956magical": [
+"F4"
+],
+"cowan2001magical": [
+"F4"
+],
+"cowan2015george": [
+"F4"
+],
+"commarford2008comparison": [
+"F4"
+],
+"doumont2002magical": [
+"F4"
+],
+"sweller2019cognitive": [
+"F4"
+],
+"hollender2010integrating": [
+"F4"
+],
+"buscher2009what": [
+"F4"
+],
+"pernice2017fshaped": [
+"F4"
+],
+"dyson2004how": [
+"F4"
+],
+"healey2012attention": [
+"F4"
+],
+"maclean2008haptic": [
+"F4"
+],
+"grudin1990computer": [
+"F4"
+],
+"harrison2007three": [
+"F4"
+],
+"hollan2000distributed": [
+"F4"
+],
+"bodker2015third": [
+"F4"
+],
+"chignell2023evolution": [
+"F4"
+],
+"forlizzi2018moving": [
+"F4"
+],
+"iso2019hcd": [
+"F4"
+],
+"gonzalez2014perspectives": [
+"F4"
+],
+"lallemand2015user": [
+"F4"
+],
+"parasuraman1997humans": [
+"F5"
+],
+"parasuraman2010complacency": [
+"F5"
+],
+"dzindolet2003role": [
+"F5"
+],
+"dietvorst2015algorithm": [
+"F5"
+],
+"dietvorst2018overcoming": [
+"F5"
+],
+"logg2019algorithm": [
+"F5"
+],
+"burton2020systematic": [
+"F5"
+],
+"mahmud2022influences": [
+"F5"
+],
+"bansal2021whole": [
+"F5"
+],
+"bucinca2021trust": [
+"F5"
+],
+"vaccaro2024combinations": [
+"F5"
+],
+"vasconcelos2023explanations": [
+"F5"
+],
+"zhang2020effect": [
+"F5"
+],
+"poursabzi2021manipulating": [
+"F5"
+],
+"bauer2023explained": [
+"F5"
+],
+"kulesza2012tell": [
+"F5"
+],
+"kulesza2013too": [
+"F5"
+],
+"bansal2019beyond": [
+"F5"
+],
+"bansal2019updates": [
+"F5"
+],
+"mohanty2025lies": [
+"F5"
+],
+"eslami2015always": [
+"F5",
+"F6"
+],
+"eslami2016first": [
+"F5"
+],
+"devito2017algorithms": [
+"F5"
+],
+"devito2018folk": [
+"F5"
+],
+"devito2021adaptive": [
+"F5",
+"F6"
+],
+"bucher2017algorithmic": [
+"F5"
+],
+"cotter2019playing": [
+"F5"
+],
+"risko2016cognitive": [
+"F5"
+],
+"lee2025impact": [
+"F5"
+],
+"bastani2025generative": [
+"F5"
+],
+"fernandes2026smarter": [
+"F5"
+],
+"dellacqua2026navigating": [
+"F5"
+],
+"glickman2025feedback": [
+"F5"
+],
+"amershi2019guidelines": [
+"F5"
+],
+"shneiderman2020human": [
+"F5"
+],
+"wilkinson1965concept": [
+"F6"
+],
+"goodywatt1963consequences": [
+"F6"
+],
+"ong1982orality": [
+"F6"
+],
+"street1984literacy": [
+"F6"
+],
+"newlondon1996pedagogy": [
+"F6"
+],
+"peters2006numeracy": [
+"F6"
+],
+"hargittai2002second": [
+"F6"
+],
+"aneesh2009global": [
+"F6"
+],
+"ng2021conceptualizing": [
+"F6"
+],
+"dogruel2022development": [
+"F6"
+],
+"gagrcin2026algorithmic": [
+"F6"
+],
+"gran2021algorithm": [
+"F6"
+],
+"hargittai2020black": [
+"F6"
+],
+"klawitter2018learning": [
+"F6"
+],
+"zhou2025algorithmic": [
+"F6"
+],
+"kalantzis2024literacy": [
+"F6"
+],
+"chalmersgalani2004seamful": [
+"F6"
+],
+"ehsan2024seamful": [
+"F6"
+],
+"rader2018explanations": [
+"F6"
+],
+"cheng2019explaining": [
+"F6"
+],
+"moon2025effects": [
+"F6"
+],
+"fouquaert2022making": [
+"F6"
+],
+"alfrink2023contestable": [
+"F6"
+],
+"vaccaro2020end": [
+"F6"
+],
+"reyna2023numeracy": [
+"F7"
+],
+"sobkow2020multiple": [
+"F7"
+]
+}
