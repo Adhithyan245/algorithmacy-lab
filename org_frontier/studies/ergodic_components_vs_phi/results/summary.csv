@@ -1,0 +1,2 @@
+h1,h2,h3,h4,e4,verdict,secondary,mean_c_tri,mean_c_dya,mean_h_tri,mean_h_dya,frac_tri,frac_dya,coexist_forms,e4_rate,reading
+REFUTED,REFUTED,REFUTED,SUPPORTED,SUPPORTED,NO_ERGODIC_SIGNATURE,CROSS_BASIN_SPLIT|BASIN_DETERMINATION_SPLIT,2.142857,2.000000,0.809160,0.977217,0.933333,1.000000,memoryless|xor_memory|or_commit|sticky_or|sticky_parity|w_follows_c,1.000000,"NO_ERGODIC_SIGNATURE — mean n_components tri=2.143 dya=2.000 (Δ=0.143); div_frac tri=0.933 dya=1.000; coexist=['memoryless', 'xor_memory', 'or_commit', 'sticky_or', 'sticky_parity', 'w_follows_c']; E4_rate=1.000"

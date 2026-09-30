@@ -352,8 +352,10 @@ def main():
                 **r,
                 "time_avg": f"{r['time_avg']:.8f}",
                 "ens_cycle": f"{r['ens_cycle']:.8f}",
+                "ens_mixture": f"{r['ens_mixture']:.8f}",
                 "ens_space": f"{r['ens_space']:.8f}",
-                "div_primary": f"{r['div_primary']:.8f}",
+                "div_primary_vacuous": f"{r['div_primary_vacuous']:.8f}",
+                "div_mixture": f"{r['div_mixture']:.8f}",
                 "div_secondary": f"{r['div_secondary']:.8f}",
             }
             w.writerow(out)

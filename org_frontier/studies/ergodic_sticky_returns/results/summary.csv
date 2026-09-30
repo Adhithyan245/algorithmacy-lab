@@ -1,0 +1,2 @@
+h1,h2,h3,verdict,hyst_gap,parity_hub_ratio,reading
+REFUTED,SUPPORTED,REFUTED,HYSTERESIS_ONLY,0.06610119,2.42857143,"HYSTERESIS_ONLY — H1 pairs=[False, False, False]; hyst_gap=0.0661; parity_hub/memoryless return ratio=2.4286"

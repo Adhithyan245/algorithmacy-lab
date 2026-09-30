@@ -1,0 +1,4 @@
+convey,sticky,convey_mass,sticky_mass,convey_return,sticky_return,return_ratio,mass_gt,ratio_ok,h1_pair
+memoryless,sticky,0.37500000,0.37500000,1.00000000,1.00000000,1.00000000,0,0,0
+or_commit,sticky_or,0.12500000,0.12500000,inf,inf,0.00000000,0,0,0
+parity_hub,sticky_parity,1.00000000,0.25000000,2.42857143,1.00000000,0.41176471,0,0,0

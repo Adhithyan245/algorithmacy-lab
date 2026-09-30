@@ -1,0 +1,2 @@
+h1,h2,h3,verdict,n_agree,n_forms,agree_rate,p_binom,mean_fail_multi,mean_fail_single,reading
+SUPPORTED,SUPPORTED,SUPPORTED,EOA_AGREES_PHI,7,9,0.777778,0.089844,0.796875,0.500000,EOA_AGREES_PHI — agree=7/9 (0.778); p_binom_one_sided=0.0898; fail_rate multi=0.797 single=0.500; sticky op=FAIL (dyadic FAIL witness=True)

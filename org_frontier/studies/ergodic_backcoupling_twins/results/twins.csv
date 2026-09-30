@@ -1,0 +1,4 @@
+convey,accum,convey_skew,accum_skew,convey_structure,convey_phi,accum_structure,accum_phi,verdict_flip
+memoryless,sticky,1,0,triadic,2.00000000,dyadic,0.00000000,1
+or_commit,sticky_or,1,0,triadic,2.00000000,triadic,2.00000000,0
+parity_hub,sticky_parity,1,0,triadic,0.50000000,triadic,0.50000000,0
