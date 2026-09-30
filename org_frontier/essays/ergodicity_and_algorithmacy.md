@@ -63,11 +63,37 @@ coordination forms are deterministic maps; their invariant measures sit on
 attractors; the ergodic components are those attractors and their basins. The
 first cell asks whether triadic forms show different component and
 time-vs-ensemble structure from dyadic forms, on panels the stoch–temporal arc
-already knows how to run. No number from that cell is reported here. The
-hypotheses are fixed first. The broader agenda — forty questions across text vs
-platform, multiplicative growth, ruin, bubbles, infinite ergodicity, operational
-tests, recommender RL, education, and organizational coordination — lives under
+already knows how to run. Hypotheses are fixed first. The broader agenda —
+forty questions across text vs platform, multiplicative growth, ruin, bubbles,
+infinite ergodicity, operational tests, recommender RL, education, and
+organizational coordination — lives under
 [`../ergodicity/`](../ergodicity/).
+
+## First results (in-silico only)
+
+Computed on designed n=3 Boolean panels; evidence about models, not
+organizations. Full tables in the study FINDINGS files.
+
+- **B1–B3 / E4** (`studies/ergodic_components_vs_phi/`): verdict
+  `NO_ERGODIC_SIGNATURE`. Mean components triadic 2.1429 vs dyadic 2.0000
+  (H1 refuted); divergence fraction triadic 0.9333 vs dyadic 1.0000 (H3
+  refuted). Coexistence cross-basin party split supported on 6/6 forms;
+  multistable basins disagree on core or occupancy on 8/8 (E4).
+- **A4** (`studies/ergodic_backcoupling_twins/`): `BACKCOUPLING_SPLITS` —
+  skew-factor tracks convey vs accumulate; strong accumulating⇒triadic
+  reading refuted (sticky is coupled and dyadic).
+- **D4** (`studies/ergodic_absorbing_ejection/`): `ABSORBING_EJECTION` —
+  ejected_latch hosts absorbing inactive dyadic `000` (basin 7) and triadic
+  `111` (basin 1).
+- **F4** (`studies/ergodic_sticky_returns/`): `HYSTERESIS_ONLY` — #109 gap
+  0.0661 remains; sticky does not enlarge inactive-{000} mass or return
+  times.
+- **G2** (`studies/ergodic_eoa_vs_phi/`): `EOA_AGREES_PHI` — agreement 7/9;
+  sticky is the FAIL×dyadic witness that EoA tracks multistability more
+  tightly than Φ.
+
+Theories: [`../ergodicity/THEORIES.md`](../ergodicity/THEORIES.md).
+Experiments: [`../ergodicity/EXPERIMENTS.md`](../ergodicity/EXPERIMENTS.md).
 
 ## References
 

@@ -1,0 +1,10 @@
+form,whole_structure,whole_phi,n_components,basin_entropy,n_triadic_attr,n_dyadic_attr,div_frac,n_div_cells,n_div_denom,coexist,e4_core_disagree,e4_occ_disagree
+memoryless,triadic,2.00000000,3,1.40563906,1,2,1.00000000,6,6,1,1,1
+sticky,dyadic,0.00000000,2,0.95443400,0,2,1.00000000,4,4,0,1,1
+xor_memory,triadic,2.00000000,2,0.95443400,1,1,1.00000000,4,4,1,0,1
+or_commit,triadic,2.00000000,3,1.40563906,1,2,1.00000000,6,6,1,1,1
+sticky_or,triadic,2.00000000,2,0.54356444,1,1,1.00000000,4,4,1,1,1
+sticky_parity,triadic,0.50000000,2,0.81127812,1,1,1.00000000,4,4,1,0,1
+parity_hub,triadic,0.50000000,1,0.00000000,1,0,0.00000000,0,2,0,0,0
+maj3,dyadic,0.00000000,2,1.00000000,0,2,1.00000000,4,4,0,0,1
+w_follows_c,triadic,2.00000000,2,0.54356444,1,1,1.00000000,4,4,1,1,1

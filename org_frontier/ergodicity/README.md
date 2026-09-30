@@ -59,8 +59,14 @@ idiographic measurement problem.
 | Path | What it is |
 | --- | --- |
 | [`AGENDA.md`](AGENDA.md) | Forty research questions in ten strands, each with method and falsifier |
+| [`THEORIES.md`](THEORIES.md) | Named falsifiable conjectures (T1–T10) tying the strands |
+| [`EXPERIMENTS.md`](EXPERIMENTS.md) | One designed experiment per strand; runnable-now priority |
 | [`SOURCES.md`](SOURCES.md) | Verifiable bibliography (working notes + classics + volume papers) |
-| [`../studies/ergodic_components_vs_phi/`](../studies/ergodic_components_vs_phi/) | First-cell study spec: attractor / basin structure vs Φ_MIP |
+| [`../studies/ergodic_components_vs_phi/`](../studies/ergodic_components_vs_phi/) | First cell (B1–B3): attractor / basin structure vs Φ_MIP |
+| [`../studies/ergodic_backcoupling_twins/`](../studies/ergodic_backcoupling_twins/) | A4: convey vs accumulating twins |
+| [`../studies/ergodic_absorbing_ejection/`](../studies/ergodic_absorbing_ejection/) | D4: absorbing ejected mediator |
+| [`../studies/ergodic_sticky_returns/`](../studies/ergodic_sticky_returns/) | F4: sticky return times / inactive basins |
+| [`../studies/ergodic_eoa_vs_phi/`](../studies/ergodic_eoa_vs_phi/) | G2: operational EoA vs Φ on synthetic logs |
 | [`../essays/ergodicity_and_algorithmacy.md`](../essays/ergodicity_and_algorithmacy.md) | Short essay introducing the crossover |
 
 ## Relation to standing arcs
@@ -75,5 +81,6 @@ operational measurement strand.
 
 ## Status
 
-Open. First cell specified, not run. Questions are pre-computational: hypotheses
-and decision rules land in git before any analysis script that produces numbers.
+Theories and experiments specified. Computable cells have hypotheses frozen
+before analysis scripts; results land only from registered scripts under
+`ci/reproduce.json`.

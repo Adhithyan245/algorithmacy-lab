@@ -1,0 +1,5 @@
+form,whole_structure,whole_phi,n_attractors
+memoryless,triadic,2.00000000,3
+ejected_latch,triadic,2.00000000,2
+ejected_latch_or,dyadic,0.00000000,2
+sticky,dyadic,0.00000000,2
