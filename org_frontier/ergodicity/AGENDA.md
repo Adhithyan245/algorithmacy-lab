@@ -545,7 +545,10 @@ Strand B attractor / component questions on existing infrastructure:
 `CROSS_BASIN_SPLIT` | `BASIN_DETERMINATION_SPLIT`. Companion computable
 cells A4/D4/F4/G2 also run (see study FINDINGS). G-strand stress follow-on
 `studies/ergodic_eoa_instrument/` packages the EoA instrument and refutes
-T8's ≥0.65 agreement on a 42-form panel (`EOA_TRACKS_MI_NOT_PHI`). Theories
+T8's ≥0.65 agreement on a 42-form panel (`EOA_TRACKS_MI_NOT_PHI`). The
+per-outcome follow-on `studies/ergodic_eoa_basin/` clears those miss
+classes under basin/stationary references but collapses binary EoA to
+all-AGREEING (`EOA_BASIN_INCONCLUSIVE`). Theories
 and experiment designs: [`THEORIES.md`](THEORIES.md),
 [`EXPERIMENTS.md`](EXPERIMENTS.md). Deferred: C (needs calibrated series),
 H (needs RL render), I empirical, J field.
