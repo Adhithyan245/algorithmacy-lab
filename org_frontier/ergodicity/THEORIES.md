@@ -271,6 +271,13 @@ above a pre-registered threshold on synthetic logs from corpus forms (G2).
 
 **Refuted by.** Agreement at chance, or the reverse association.
 
+**Computational status.** G2 (`ergodic_eoa_vs_phi`) supported agreement on
+the nine-form designed panel (7/9). The instrument stress cell
+(`ergodic_eoa_instrument`) refutes the ≥0.65 threshold on a 42-form
+panel (17/42); disagreements concentrate in dyadic multi-attractor forms.
+T8's field-instrument ambition survives only with that class limitation
+stated.
+
 ---
 
 ## T9 — Ensemble RL misaligns with time-average welfare (Strand H)
@@ -354,7 +361,7 @@ ensemble advice matching or beating trajectory-conditioned advice.
 | Ruin raises algorithmacy's marginal value; ejected Φ split | **conjecture** (T5) |
 | Bubbles = components; basins disagree on core | **conjecture** (T6) |
 | Sticky forms caricature infinite-ergodic stickiness | **conjecture** (T7) |
-| Operational EoA agrees with Φ on synthetic logs | **conjecture** (T8) |
+| Operational EoA agrees with Φ on synthetic logs | **partial** (T8): G2 7/9 supported; 42-form stress **refutes** ≥0.65 — EoA tracks MI / dyadic×multi, not Φ |
 | Ensemble RL / cooption / rendered Φ differences | **conjecture** (T9) |
 | Idiographic assessment; triadic team divergence | **conjecture** (T10) |
 

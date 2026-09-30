@@ -235,6 +235,17 @@ refutes.
 
 **Cost.** Seconds beyond Exp-B. **Runnable now:** yes.
 
+**Status (G2 cell).** Run — `studies/ergodic_eoa_vs_phi/`. Verdict
+`EOA_AGREES_PHI` on the nine-form panel (7/9); H2/H3 supported. Misses:
+sticky, maj3 (dyadic multi-attractor).
+
+**Status (instrument stress).** Run —
+`studies/ergodic_eoa_instrument/`. Reusable instrument in
+`ergodicity/eoa.py`. On the pre-registered 42-form panel, agreement
+**17/42 (0.405)** — H1 REFUTED; disagreements concentrate in
+dyadic×multi (H2 SUPPORTED); verdict `EOA_TRACKS_MI_NOT_PHI`. Does not
+rewrite the G2 cell above.
+
 ---
 
 ## Exp-H — Ensemble vs time-average RL renderings (Strand H / T9)
@@ -340,7 +351,7 @@ PR.
 | Exp-D | D | yes | `studies/ergodic_absorbing_ejection/` |
 | Exp-E | E | yes (with B) | folded into first cell + E4 report |
 | Exp-F | F | yes | `studies/ergodic_sticky_returns/` |
-| Exp-G | G | yes | `studies/ergodic_eoa_vs_phi/` |
+| Exp-G | G | yes | `studies/ergodic_eoa_vs_phi/` + `studies/ergodic_eoa_instrument/` |
 | Exp-C | C | simulation only | deferred (no calibrated series in PR) |
 | Exp-H | H | partial | deferred pending render convention |
 | Exp-I | I | review only | deferred empirical |

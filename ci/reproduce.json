@@ -6411,6 +6411,32 @@
       ],
       "timeout": 60,
       "source": "org_frontier/studies/ergodic_eoa_vs_phi/FINDINGS.md"
+    },
+    {
+      "name": "ergodic-eoa-instrument-unit",
+      "cmd": "python -m org_frontier.ergodicity.test_eoa",
+      "expect": [
+        "Ran 6 tests",
+        "OK"
+      ],
+      "timeout": 30,
+      "source": "org_frontier/ergodicity/test_eoa.py"
+    },
+    {
+      "name": "ergodic-eoa-instrument-stress",
+      "cmd": "python org_frontier/studies/ergodic_eoa_instrument/analyze_stress.py",
+      "expect": [
+        "memoryless whole: triadic Φ=2.000000  PASS",
+        "sticky whole:     dyadic Φ=0.000000  PASS",
+        "H1 (agreement ≥0.65 / binom):       REFUTED",
+        "H2 (disagreements in dya×multi):    SUPPORTED",
+        "H3 (sticky & maj3 dya×multi miss):  SUPPORTED",
+        "H4 (EoA ≤0.1× Φ wall-clock):        SUPPORTED",
+        "verdict: EOA_TRACKS_MI_NOT_PHI",
+        "agreement: 17/42 = 0.405"
+      ],
+      "timeout": 120,
+      "source": "org_frontier/studies/ergodic_eoa_instrument/FINDINGS.md"
     }
   ]
 }

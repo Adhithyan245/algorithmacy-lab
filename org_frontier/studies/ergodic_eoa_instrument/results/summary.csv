@@ -1,0 +1,2 @@
+mode,h1,h2,h3,h4,h5a,h5b,h5c,verdict,n_agree,n_forms,agree_rate,p_binom,n_disagree,miss_class_share,eoa_phi_time_ratio,mean_eoa_s,mean_phi_s,g2_agree_rate,rate_t16,rate_t256,rate_noise05,rate_s_only,tp,tn,fp,fn
+full,REFUTED,SUPPORTED,SUPPORTED,SUPPORTED,SUPPORTED,SUPPORTED,SUPPORTED,EOA_TRACKS_MI_NOT_PHI,17,42,0.404762,0.917925,25,0.800000,0.006704,0.000345,0.051438,0.777778,0.777778,0.777778,0.777778,0.777778,17,0,25,0

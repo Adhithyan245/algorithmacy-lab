@@ -67,6 +67,8 @@ idiographic measurement problem.
 | [`../studies/ergodic_absorbing_ejection/`](../studies/ergodic_absorbing_ejection/) | D4: absorbing ejected mediator |
 | [`../studies/ergodic_sticky_returns/`](../studies/ergodic_sticky_returns/) | F4: sticky return times / inactive basins |
 | [`../studies/ergodic_eoa_vs_phi/`](../studies/ergodic_eoa_vs_phi/) | G2: operational EoA vs Φ on synthetic logs |
+| [`eoa.py`](eoa.py) | Reusable EoA instrument (`run_eoa` / `run_eoa_parties`) |
+| [`../studies/ergodic_eoa_instrument/`](../studies/ergodic_eoa_instrument/) | G stress: instrument + wider panel vs Φ |
 | [`../essays/ergodicity_and_algorithmacy.md`](../essays/ergodicity_and_algorithmacy.md) | Short essay introducing the crossover |
 
 ## Relation to standing arcs
