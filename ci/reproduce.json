@@ -6476,7 +6476,7 @@
       "name": "ergodic-settling-unit",
       "cmd": "python org_frontier/ergodicity/test_settling.py",
       "expect": [
-        "Ran 12 tests",
+        "Ran 17 tests",
         "OK"
       ],
       "timeout": 30,
@@ -6512,6 +6512,39 @@
       ],
       "timeout": 180,
       "source": "org_frontier/studies/ergodic_settling_time/FINDINGS.md"
+    },
+    {
+      "name": "ergodic-gap-decomp-ci",
+      "cmd": "python org_frontier/studies/ergodic_gap_decomposition/analyze_decomposition.py --ci",
+      "expect": [
+        "memoryless whole: triadic \u03a6=2.000000  PASS",
+        "sticky whole:     dyadic \u03a6=0.000000  PASS",
+        "H5 (recomputed gaps match committed):             SUPPORTED",
+        "H0 (AUC not a fluke):                              NOT_TESTABLE",
+        "H1 (finite-T phase artifact):                      NOT_TESTABLE",
+        "H3 (observable choice / party oscillation):        NOT_TESTABLE",
+        "verdict: GAP_DECOMPOSITION_INCONCLUSIVE"
+      ],
+      "timeout": 90,
+      "source": "org_frontier/studies/ergodic_gap_decomposition/FINDINGS.md"
+    },
+    {
+      "name": "ergodic-gap-decomp-full",
+      "cmd": "python org_frontier/studies/ergodic_gap_decomposition/analyze_decomposition.py",
+      "expect": [
+        "memoryless whole: triadic \u03a6=2.000000  PASS",
+        "sticky whole:     dyadic \u03a6=0.000000  PASS",
+        "H5 (recomputed gaps match committed):             SUPPORTED",
+        "H0 (AUC not a fluke):                              SUPPORTED",
+        "H1 (finite-T phase artifact):                      REFUTED",
+        "H2 (within-basin heterogeneity):                   REFUTED",
+        "H3 (observable choice / party oscillation):        REFUTED",
+        "H4 (one panel group carries association):          REFUTED",
+        "verdict: GAP_UNEXPLAINED",
+        "AUC=0.7294"
+      ],
+      "timeout": 180,
+      "source": "org_frontier/studies/ergodic_gap_decomposition/FINDINGS.md"
     }
   ]
 }

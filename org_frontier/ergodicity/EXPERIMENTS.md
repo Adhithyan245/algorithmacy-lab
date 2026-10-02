@@ -267,6 +267,20 @@ relaxation AUC 0.338 (H4 REFUTED); confound checks fail (H5 REFUTED);
 verdict `SETTLING_NULL`. Does not rewrite the G2, instrument-stress, or
 basin cells above.
 
+**Status (gap decomposition).** Run —
+`studies/ergodic_gap_decomposition/`. Extends `settling.py` with
+attractor-oscillation and pre-cycle path-diversity summaries. On the
+same frozen 42-form panel, the residual basin-mode gap–triadic
+association is not a fluke (AUC 0.729; bootstrap 95% CI [0.560, 0.862];
+permutation p 0.0075; H0 SUPPORTED). Finite-T scaling is ∼1/T (mean
+log-log slope −0.976) but party-bit oscillation does not absorb the
+link (β ratio 0.985; H1 REFUTED); pre-cycle diversity does not (β ratio
+1.163; H2 REFUTED); party vs mediator separation holds (Δ AUC 0.232)
+without oscillation mediation (H3 REFUTED); no leave-one-group-out
+kills the basin H4 band (H4 REFUTED); recomputed gaps match the
+committed CSV (H5 SUPPORTED); verdict `GAP_UNEXPLAINED`. Does not
+rewrite the G2, instrument-stress, basin, or settling cells above.
+
 ---
 
 ## Exp-H — Ensemble vs time-average RL renderings (Strand H / T9)

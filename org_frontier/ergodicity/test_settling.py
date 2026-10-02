@@ -169,5 +169,59 @@ class TestMixingKnownAnswers(unittest.TestCase):
             summarize_mixing(rules, eps_flip=0.0)
 
 
+class TestOscillationAndPathDiversity(unittest.TestCase):
+    def test_identity_no_oscillation(self):
+        """Every state a fixed point ⇒ party bits constant on every cycle."""
+        from org_frontier.ergodicity.settling import summarize_oscillation
+
+        rules = control_identity_single()
+        osc = summarize_oscillation(rules, party_indices=(0, 2))
+        self.assertAlmostEqual(osc.party_osc_frac, 0.0, places=9)
+        self.assertAlmostEqual(osc.mean_cycle_var, 0.0, places=9)
+        self.assertEqual(osc.max_period, 1)
+        self.assertEqual(osc.n_attractors, 8)
+
+    def test_full_cycle_full_oscillation(self):
+        """Hamiltonian 8-cycle: each bit takes both values ⇒ osc_frac=1."""
+        from org_frontier.ergodicity.settling import summarize_oscillation
+
+        nxt = control_full_cycle_n3()
+        osc = summarize_oscillation(nxt, party_indices=(0, 2))
+        self.assertAlmostEqual(osc.party_osc_frac, 1.0, places=9)
+        self.assertAlmostEqual(osc.mean_cycle_var, 0.25, places=9)
+        self.assertEqual(osc.max_period, 8)
+        self.assertEqual(osc.n_attractors, 1)
+
+    def test_two_step_cycle_bit0_oscillates(self):
+        """000↔100: bit 0 oscillates; bits 1,2 constant on the unique cycle."""
+        from org_frontier.ergodicity.settling import summarize_oscillation
+
+        nxt = control_two_step_cycle()
+        # Only one attractor (the 2-cycle); drains go there.
+        osc0 = summarize_oscillation(nxt, party_indices=(0,))
+        self.assertAlmostEqual(osc0.party_osc_frac, 1.0, places=9)
+        osc12 = summarize_oscillation(nxt, party_indices=(1, 2))
+        self.assertAlmostEqual(osc12.party_osc_frac, 0.0, places=9)
+
+    def test_identity_pre_cycle_div_zero(self):
+        """Identity: every start on-cycle ⇒ pre_cycle_div = 0."""
+        from org_frontier.ergodicity.settling import summarize_pre_cycle_diversity
+
+        rules = control_identity_single()
+        div = summarize_pre_cycle_diversity(rules, party_indices=(0, 2))
+        self.assertAlmostEqual(div.pre_cycle_div, 0.0, places=9)
+        self.assertAlmostEqual(div.mean_transient, 0.0, places=9)
+        self.assertEqual(div.scale, 4)
+
+    def test_chain_pre_cycle_div_positive(self):
+        """Hamming drain: nonzero starts visit distinct party patterns."""
+        from org_frontier.ergodicity.settling import summarize_pre_cycle_diversity
+
+        nxt = control_chain_to_fixed()
+        div = summarize_pre_cycle_diversity(nxt, party_indices=(0, 2))
+        self.assertGreater(div.pre_cycle_div, 0.0)
+        self.assertAlmostEqual(div.mean_transient, 1.5, places=9)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

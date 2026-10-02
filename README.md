@@ -323,6 +323,7 @@ Multi-experiment batteries on one theme.
 - **[ergodic_eoa_basin (Strand G / T8 per-outcome fix)](org_frontier/studies/ergodic_eoa_basin/README.md)** — classes that drove the prior `EOA_TRACKS_MI_NOT_PHI` result, but the
 - **[ergodic_eoa_instrument (Strand G / T8 stress)](org_frontier/studies/ergodic_eoa_instrument/README.md)** — panel the EoA instrument agrees with whole-form Φ on **17/42** forms
 - **[ergodic_eoa_vs_phi (Strand G2)](org_frontier/studies/ergodic_eoa_vs_phi/README.md)** — logs agrees with whole-form Φ on **7/9** forms (agree rate **0.778**;
+- **[ergodic_gap_decomposition (Strand G / T8 residual)](org_frontier/studies/ergodic_gap_decomposition/README.md)** — basin-mode EoA gap's continuous association with whole-form triadic status
 - **[ergodic_settling_time (Strand G / T8 residual)](org_frontier/studies/ergodic_settling_time/README.md)** — length does not separate whole-form triadic from dyadic (median **0.875**
 - **[ergodic_sticky_returns (Strand F4)](org_frontier/studies/ergodic_sticky_returns/README.md)** — sticky−memoryless = **0.0661** (≥ 0.05) remains (**H2 SUPPORTED**)
 - **[Fielded W × Φ landmark (agenda V4 #6)](org_frontier/studies/fielded_w_landmark/README.md)** — still predicts HUB / RING4 / POOL (acc=1.000), but a **fielded rater-
