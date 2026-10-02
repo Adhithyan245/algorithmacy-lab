@@ -1,0 +1,2 @@
+ci,n_forms,n_triadic,n_dyadic,h0,h1,h2,h3,h4,h5,verdict,winner,auc,auc_ci_lo,auc_ci_hi,auc_perm_p,mean_t_slope,mean_gapT_cv,beta_ratio_osc,beta_ratio_div,partial_rho_osc,partial_rho_div,rho_uni,auc_party,auc_mediator,rho_party,rho_mediator,beta_gap_uni,beta_gap_uni_p
+0,42,17,25,SUPPORTED,REFUTED,REFUTED,REFUTED,REFUTED,SUPPORTED,GAP_UNEXPLAINED,,0.72941176,0.56000000,0.86235294,0.00750000,-0.97634861,0.00492733,0.98486196,1.16300648,0.32479995,0.34592510,0.33038728,0.72941176,0.49764706,0.33038728,-0.04639833,1.12514734,0.01224274

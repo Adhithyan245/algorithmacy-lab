@@ -1,0 +1,3 @@
+mechanism,beta_uni,p_uni,beta_partial,p_partial,beta_ratio,rho_uni,rho_uni_p,rho_partial,rho_partial_p,shrink_pass,lose_sig,spearman_drop,soft_ok,mediates_strict
+a_osc,1.12514734,0.01224274,1.10811482,0.01416893,0.98486196,0.33038728,0.02500000,0.32479995,0.02700000,0,0,1,0,0
+b_div,1.12514734,0.01224274,1.30855365,0.02075041,1.16300648,0.33038728,0.02500000,0.34592510,0.01550000,0,0,0,0,0

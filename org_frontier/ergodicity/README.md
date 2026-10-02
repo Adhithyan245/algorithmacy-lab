@@ -72,6 +72,7 @@ idiographic measurement problem.
 | [`../studies/ergodic_eoa_instrument/`](../studies/ergodic_eoa_instrument/) | G stress: instrument + wider panel vs Φ |
 | [`../studies/ergodic_eoa_basin/`](../studies/ergodic_eoa_basin/) | G follow-on: basin/stationary reference fix vs Φ |
 | [`../studies/ergodic_settling_time/`](../studies/ergodic_settling_time/) | G residual: settling time vs residual basin-mode EoA gap |
+| [`../studies/ergodic_gap_decomposition/`](../studies/ergodic_gap_decomposition/) | G residual: decompose residual gap–Φ link (phase / path / observable / panel) |
 | [`../essays/ergodicity_and_algorithmacy.md`](../essays/ergodicity_and_algorithmacy.md) | Short essay introducing the crossover |
 
 ## Relation to standing arcs

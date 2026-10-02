@@ -1,0 +1,5 @@
+mechanism,covariate,hypothesis,passes,beta_ratio,partial_rho,rho_uni,t_scaling_slope,extra
+a_phase_artifact,party_osc_frac,H1,0,0.98486196,0.32479995,0.33038728,-0.97634861,0.00492733
+b_within_basin,pre_cycle_div,H2,0,1.16300648,0.34592510,0.33038728,nan,nan
+c_party_oscillation,party_osc_frac,H3,0,0.98486196,0.32479995,0.33038728,nan,0.23176471
+d_panel_composition,leave_one_group,H4,0,nan,nan,nan,nan,nan
