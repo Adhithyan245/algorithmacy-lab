@@ -10,6 +10,8 @@ egress proxy (2026-10-03). Nothing in this outline may be copied into a draft un
 
 **Working title.** *Decision Experience Design, Part 3: What a Prediction Market Asks You to Do*
 
+**Thesis note (2026-10-03).** Read section (b): the target is sports betting dressed as decision markets.
+
 **Form.** Substack essay in the register of the live Part 1: author-date APA, headed sections, falsifiable
 propositions and limitations at the end. Target length 4,000 to 6,000 words, set after verification.
 
@@ -26,17 +28,25 @@ user no scaffold toward the skill the decision does need, and borrows the form o
 The altitude follows the repo rule. The essay is modest about what is shown (no study measures how lay users
 read Polymarket or Kalshi prices) and confident about the design claim.
 
-## (b) Fork the author must settle first
+## (b) Author ruling (2026-10-03): the target is sports betting dressed as decision markets
 
-The facets point to two possible targets, and the choice changes sections 3 and 4.
+The author settled the fork. Kalshi and Polymarket present themselves as prediction and decision markets, and
+the product is sports betting in that dress. The design failure is the dress: the decision-market frame
+(information, forecasting, a price that guides a choice) licenses an interface built for betting, and the user
+who wants a probability gets a bet slip.
 
-1. Decision markets as sold: the pitch that a market price is a decision input. Evidence base: Facets A and C.
-2. Sports betting presented as decision markets: if sports dominate volume, most use is betting, and the
-   decision-market framing describes a minority of use. Evidence base: Facet D. The volume figures that carry
-   this (about 80% of Kalshi, about 40% of Polymarket) are [verify] and come from WebSearch summaries.
-
-Recommendation: write target 1 and treat target 2 as a limitation or a closing section, unless D1 verifies the
-volume mix. If the mix verifies, the essay has a harder, more interesting claim.
+Consequences for the plan:
+1. Section 1 states the promise only to set up the gap. Facets A and C become the contrast, not the target.
+2. A new section 2 carries the volume mix. The figures that carry it (about 80% of Kalshi, about 40% of
+   Polymarket) are [verify], WebSearch summaries only. The essay cannot assert them until D1 fetches the
+   platforms' or regulators' own numbers. If they do not verify, the claim downgrades to "a large share" with
+   whatever source verifies, or the essay says the share is unknown.
+3. Section 5 (the betting form) moves up and becomes the spine. It stays an analogy argument: no study covers
+   event-contract interfaces.
+4. Part 3 argues design, not accuracy. Calibration findings (section (d)) stay in as limits: a well-calibrated
+   price behind a betting interface is still a betting product.
+5. The regulatory dress (CFTC designation, state litigation over sports contracts) is a candidate section.
+   All of it is [verify] and facts here move quickly.
 
 ## (c) Section plan
 
@@ -98,7 +108,7 @@ Report these in the essay, not around it.
 
 ## (f) Open questions for the author
 
-1. Which target, section (b).
+1. Whether the volume mix verifies; if not, how strongly to word the sports-betting claim.
 2. Whether Part 1's "awareness without agency" line needs the correction Part 2 already flags (Eslami et al. 2015).
 3. Whether sections 5 and 7 survive without verified platform facts, or the essay waits for D1.
 4. Whether the closing offers design proposals or only falsifiable propositions.
