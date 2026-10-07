@@ -74,6 +74,7 @@ Outward manuscripts. Live dates in [`NOW.md`](NOW.md) and [`submissions/CALENDAR
 | [`submissions/coordinative_sovereignty/`](submissions/coordinative_sovereignty/) | Coordinative sovereignty |
 | [`submissions/hospitality_phygital/`](submissions/hospitality_phygital/) | Hospitality phygital — algorithmic mediation and guest agency |
 | [`submissions/lima_pdw/`](submissions/lima_pdw/) | Lima PDW — algorithmacy as a communication competency |
+| [`submissions/algorithmacy_ot/`](submissions/algorithmacy_ot/) | Algorithmacy for *Organization Theory* |
 | [`submissions/slacker_thirds/`](submissions/slacker_thirds/) | *Slacker* chapter |
 | [`submissions/hegel_coordination/`](submissions/hegel_coordination/) | Hegel and the coordination program — a public reading |
 | [`submissions/proposals/`](submissions/proposals/) | Proposals — submissions to external calls |
