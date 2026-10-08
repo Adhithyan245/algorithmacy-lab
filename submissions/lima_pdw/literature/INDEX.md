@@ -16,9 +16,9 @@ Three works were carded twice in the 18 August sweep. Both files stay. The junio
 
 | Depth | Count |
 |---|---|
-| Full text | 125 |
+| Full text | 127 |
 | Extended preview | 38 |
-| Abstract only | 219 |
+| Abstract only | 217 |
 | Metadata only | 26 |
 | Abstract plus author secondary | 1 |
 | Preview | 1 |
@@ -250,6 +250,8 @@ Three works were carded twice in the 18 August sweep. Both files stay. The junio
   The most efficient resource in this sub-cluster, and it should do real work in §9 rather than sit in a footnote.
 - **[Pinski, M., & Benlian, A. (2023). AI literacy — Towards measuring human competency in artificial intelligence. In *Proceedings of the 56th Hawaii International Conference on System Sciences* (pp. 165–174).](cards/pinski2023.md)**  
   **This is the most dangerous card in the sub-cluster, and it still fails — but the manuscript must handle it explicitly rather than sweeping it into a general claim, because a reviewer who reads it superficially will think it has a human position in it.**
+- **[Stelmaszak, M., Joshi, M., & Constantiou, I. (2026). Artificial intelligence as an organizing capability arising from human-algorithm relations. *Journal of Management Studies*, 63(2), 335–365.](cards/stelmaszak2026.md)**  
+  **The *Organization Theory* draft cannot use this article as its example of a dyadic account.** The draft's section 2 says the article "inadvertently erases the interdependent human peer on the other side of the screen" and names the result a "dyadic…
 - **[Sutherland, W., Jarrahi, M. H., Dunn, M., & Nelson, S. B. (2020). Work precarity and gig literacies in online freelancing. *Work, Employment and Society*, 34(3), 457–475.](cards/sutherland2020.md)**  
   The manuscript already claims this as its nearest precedent, and the claim is right, but the card has to record something the manuscript should not discover from a reviewer: **this is the only source in the sub-cluster whose empirical design contains the…
 - **[van Deursen, A. J. A. M., Helsper, E. J., & Eynon, R. (2016). Development and validation of the Internet Skills Scale (ISS). *Information, Communication & Society*, 19(6), 804–823.](cards/vandeursen2016.md)**  
@@ -354,8 +356,6 @@ Three works were carded twice in the 18 August sweep. Both files stay. The junio
   **Rival on the name, neighbour on the construct, and the most recent thing in the field.** Published in 2026, this is the newest claim to have named the competence platform work demands, and a reviewer who tracks the literacy literature will have seen it.
 - **[Shin, D., Rasul, A., & Fotiadis, A. (2022). Why am I seeing this? Deconstructing algorithm literacy through the lens of users. *Internet Research*, 32(4), 1214–1234.](cards/shin2022.md)**  
   A neighbour, and the one that shows what happens when algorithm literacy gets absorbed into technology-acceptance research.
-- **[Stelmaszak, M., Joshi, M., & Constantiou, I. (2026). Artificial intelligence as an organizing capability arising from human-algorithm relations. *Journal of Management Studies*, 63(2), 335–365.](cards/stelmaszak2026.md)**  
-  **Named in §9 as a construct to be beaten, and the manuscript's disposal of it is correct but told too quickly.** The paper's §8 possession argument does the work: a capability is held by the party that owns the routine, and algorithmacy's subject owns…
 - **[Tour, E., & Zadorozhnyy, A. (2025). Conceptualizing and operationalizing prompt literacy for English language learners. *Journal of Adolescent & Adult Literacy*, 69(3), e70020.](cards/tour2025.md)**  
   Neighbour, and the clearest case in the cluster of a construct that is unambiguously **skill** by the paper's criterion.
 - **[Tully, S. M., Longoni, C., & Appel, G. (2025). Lower artificial intelligence literacy predicts greater AI receptivity. *Journal of Marketing*, 89(5), 1–20.](cards/tully2025.md)**  
@@ -670,6 +670,8 @@ Three works were carded twice in the 18 August sweep. Both files stay. The junio
   The complement to the qualitative cluster and the source that keeps §7 from over-generalising.
 - **[Lee, M. K., Kusbit, D., Metsky, E., & Dabbish, L. (2015). Working with machines: The impact of algorithmic and data-driven management on human workers. *Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems* (CHI '15), 1603–1612.](cards/lee2015.md)**  
   "More knowledge more advantage" is §10's stratified-fluency property stated as a field finding, with the mechanism attached: the better-informed drivers acted differently and got better outcomes, and the worse-informed made errors that damaged their own…
+- **[Leonardi, P. M., & Leavell, V. (2026). Knowing enough to be dangerous: The problem of "artificial certainty" for expert authority when using AI for decision making and planning. *Organization Science*, 37(2), 516–543.](cards/leonardileavell2026.md)**  
+  **Partly supports the introduction's sentence.
 - **[Möhlmann, M., Zalmanson, L., Henfridsson, O., & Gregory, R. W. (2021). Algorithmic management of work on online labor platforms: When matching meets control. *MIS Quarterly*, 45(4), 1999–2022.](cards/mohlmann2021.md)**  
   Distinct from `mohlmann2023`, and the two should not be conflated in the bibliography — same first author, same platform, different construct.
 - **[Petre, C., Duffy, B. E., & Hund, E. (2019). "Gaming the system": Platform paternalism and the politics of algorithmic visibility. *Social Media + Society*, 5(4), 1–12.](cards/petreduffyhund2019.md)**  
@@ -719,8 +721,6 @@ Three works were carded twice in the 18 August sweep. Both files stay. The junio
 - **[Klawitter, E., & Hargittai, E. (2018). "It's like learning a whole other language": The role of algorithmic skills in the curation of creative goods. *International Journal of Communication*, 12, 3490–3510.](cards/klawitterhargittai2018.md)**  
   The earliest labelling of the thing §7 is about as a *skill* rather than a knowledge, in a population that has a real counterpart (buyers) and a real economic outcome (sales).  
   Junior slug of [`klawitter2018`](cards/klawitter2018.md).
-- **[Leonardi, P. M., & Leavell, V. (2026). Knowing enough to be dangerous: The problem of "artificial certainty" for expert authority when using AI for decision making and planning. *Organization Science*, 37(2), 516–543.](cards/leonardileavell2026.md)**  
-  **Supplies the introduction's claim that AI produces confidence it has not earned, but its certainty is about the future and its victims are an audience.** The author's introduction cites it for algorithmic black boxes "paradoxically manufacturing a false…
 - **[Lomborg, S., & Kapsch, P. H. (2020). Decoding algorithms. *Media, Culture & Society*, 42(5), 745–761.](cards/lomborgkapsch2020.md)**  
   The most direct precedent for treating opacity as a *communication* problem rather than a knowledge problem, which is the move §9 says the five constructs fail to make.
 - **[Long, D., & Magerko, B. (2020). What is AI literacy? Competencies and design considerations. *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems* (CHI '20), Paper 598, 1–16.](cards/longmagerko2020.md)**  

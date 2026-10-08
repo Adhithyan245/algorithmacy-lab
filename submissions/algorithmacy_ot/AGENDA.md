@@ -4,8 +4,8 @@ Opened 2026-10-07. Author-only items come first; nothing below them can settle t
 
 ## For the author
 
-1. **Rule on the flags.** [`manuscript/FLAGS_2026-10-07.md`](manuscript/FLAGS_2026-10-07.md), A1–A5
-   first. A1 (Schoeneborn et al. do not attribute organizationality to algorithms) and A2
+1. **Rule on the flags.** [`manuscript/FLAGS_2026-10-07.md`](manuscript/FLAGS_2026-10-07.md), A1–A6
+   first. A6 is new: the "dyadic trap" reading of Stelmaszak et al. does not survive the full text. A1 (Schoeneborn et al. do not attribute organizationality to algorithms) and A2
    ("coordinative co-optation" is not Stark and Vanden Broeck's phrase) each appear in both sections.
 2. **Sensibility or competency?** The introduction says sensibility; the Lima paper argued competency
    against skill and capability. Section 3 cannot be drafted until one sentence relates them.
@@ -19,9 +19,9 @@ Opened 2026-10-07. Author-only items come first; nothing below them can settle t
 6. **Introduction ¶2** — the parenthetical about refactoring the *why*. Keep, fold in, or cut?
 7. **Read SAGE's generative-AI policy and decide the disclosure.** The guidelines point to it; nobody
    has read it for this paper. Section 2 began as another assistant's draft.
-8. **Three PDFs to drop** into `lima_pdw/literature/pdfs/` in the main checkout:
-   `stelmaszak2026.pdf` (open access, behind a bot check), `anthony2023.pdf` and
-   `leonardileavell2026.pdf` (*Organization Science*, paywalled; the library proxy should have them).
+8. **One PDF to drop** into `lima_pdw/literature/pdfs/` in the main checkout: `anthony2023.pdf`
+   (*Organization Science* 34(5), paywalled). Stelmaszak et al. and Leonardi & Leavell arrived
+   2026-10-07 and are read in full.
 9. **A title.**
 10. **The APC.** US$1,000, with possible institutional or EGOS support. A second APC falls due for the
     January paper.
@@ -30,7 +30,7 @@ Opened 2026-10-07. Author-only items come first; nothing below them can settle t
 
 1. Apply the ruled flags to `PAPER.md`, and nothing else.
 2. Run the six research lines in [`RESEARCH_PLAN.md`](RESEARCH_PLAN.md) and card the results.
-3. Raise the three abstract-depth cards to full text when the PDFs arrive, and settle flag C1.
+3. Raise `anthony2023` to full text when the PDF arrives.
 4. Correct `starkvandenbroeck2024.md` per `manuscript/process/2026-10-07_stark_reread.md` §6.
 5. Re-read `starkpais2020` for the matching vocabulary (flag C5).
 6. Build the section 4 packet: the carried-over sentences in order, verified quotes with pages, and

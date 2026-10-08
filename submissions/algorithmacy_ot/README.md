@@ -15,8 +15,15 @@ drafted with another AI assistant, which the author rules is their working draft
 Claude carded the six sources the new text cites that the library lacked, re-read Stark and Vanden
 Broeck, and checked the draft against all of them; the result is
 [`manuscript/FLAGS_2026-10-07.md`](manuscript/FLAGS_2026-10-07.md), five claims the cited source does
-not support and seven that drift from it. None is applied. Sections 3–6 are unwritten; the author
-drafts them from the packets in [`manuscript/OUTLINE.md`](manuscript/OUTLINE.md).
+not support and seven that drift from it. None is applied. Sections 3–6 are unwritten in `PAPER.md`.
+
+**Later on 2026-10-07 the author asked for a full draft.** It is
+[`manuscript/DRAFT_2026-10-07_claude.md`](manuscript/DRAFT_2026-10-07_claude.md): about 5,900 words of body,
+two-thirds of it the author's own prose carried from the introduction and the Lima paper, the rest
+Claude's and tagged as such. It follows the sources where the flags found the earlier wording wrong.
+It is about 3,000 words under budget, in the mechanics and the discussion, because the research lines
+are unrun. Rule 1 below was set aside for that one file at the author's instruction; it still governs
+`PAPER.md`.
 
 ## Rules for this arm
 
@@ -42,6 +49,17 @@ drafts them from the packets in [`manuscript/OUTLINE.md`](manuscript/OUTLINE.md)
 | [`FEEDBACK.md`](FEEDBACK.md) | What the Lima reviewers said. Mostly empty: the author's to fill |
 | [`RESEARCH_PLAN.md`](RESEARCH_PLAN.md) | The six lines of new reading the unwritten sections need |
 | [`manuscript/PAPER.md`](manuscript/PAPER.md) | **The live draft** |
+| [`manuscript/sbs_schoeneborn2026/`](manuscript/sbs_schoeneborn2026/) | **The rebuild in progress.** The paper mapped sentence by sentence onto Schoeneborn, Dobusch & Seidl (2026): `MODEL_BRIEF.md`, `MODEL.md`, `OUR_BRIEF.md`, `OUTLINE.md`, `MANUSCRIPT.md`, `LEDGER.md`. **Done for the whole paper**: 228 model sentences answered by 227 of ours. `ASSEMBLED.md` is the clean copy with abstract and references: about 7,040 words of body, 65 references, about 8,760 all-in |
+| [`manuscript/process/TARGET_STRUCTURE_porsfelt2026.md`](manuscript/process/TARGET_STRUCTURE_porsfelt2026.md) | Full template of Porsfelt, Vestergaard & Hjorth (2026), the author's other named target; `process/structure_2026_*.md` hold the structures of the seven other 2026 theory articles |
+| [`manuscript/DRAFT_2026-10-08_full.md`](manuscript/DRAFT_2026-10-08_full.md) | **The claims source for the rebuild.** The tight draft brought to the length and reference count of the OT models by adding sourced content only: about 6,750 words of body, 78 references, about 9,200 all-in |
+| [`manuscript/DRAFT_2026-10-08_tight.md`](manuscript/DRAFT_2026-10-08_tight.md) | Superseded by the full draft. The hard-cut version. Cut hard on the author's instruction: no roadmap, no hand-offs, no hedges, no research-questions paragraph. About 4,800 words of body, 7,200 all-in, 74 references. The author's four introduction paragraphs are uncut |
+| [`manuscript/DRAFT_2026-10-08.md`](manuscript/DRAFT_2026-10-08.md) | Superseded by the tight draft. 7,600 words of body. The plain draft with the author's three changes of 8 October: no driver or freelancer examples, the oracy → literacy → algorithmacy argument stated in its own section, and citations placed as the OT articles place them (75 references). Cut on 8 October to about 7,600 words of body, 10,070 all-in |
+| [`manuscript/CITATION_REVIEW_2026-10-08.md`](manuscript/CITATION_REVIEW_2026-10-08.md) | How four OT articles cite, the target taken from them, what was added, and what is still missing |
+| [`manuscript/DRAFT_2026-10-07_plain.md`](manuscript/DRAFT_2026-10-07_plain.md) | Superseded by the 8 October draft. Second attempt, written plainly after the author rejected the first: each paragraph states its point and then explains it. About 7,000 words of body. The four introduction paragraphs are the author's, corrected; the rest is Claude's wording of the author's argument |
+| [`manuscript/PARAGRAPH_REVIEW_2026-10-08_after_cut.md`](manuscript/PARAGRAPH_REVIEW_2026-10-08_after_cut.md) | The current review: what was cut, section shares and every paragraph of the cut draft against four OT articles |
+| [`manuscript/PARAGRAPH_REVIEW_2026-10-08.md`](manuscript/PARAGRAPH_REVIEW_2026-10-08.md) | Word counts and a paragraph-by-paragraph check of the plain draft against four OT articles; the four paragraph maps are in `manuscript/process/model_paragraphs_*.md` |
+| [`manuscript/DRAFT_2026-10-07_claude.md`](manuscript/DRAFT_2026-10-07_claude.md) | **Rejected by the author on 2026-10-07.** The first full draft by Claude, on the author's instruction; every paragraph tagged as the author's verbatim, the author's edited, or Claude's. Not the author's text |
+| [`manuscript/DRAFT_NOTES_2026-10-07.md`](manuscript/DRAFT_NOTES_2026-10-07.md) | What the draft is made of, every change to the author's wording, and what is still thin |
 | [`manuscript/OUTLINE.md`](manuscript/OUTLINE.md) | The architecture: budget, each section's job, a packet per section |
 | [`manuscript/FLAGS_2026-10-07.md`](manuscript/FLAGS_2026-10-07.md) | Source checks on sections 1 and 2, awaiting rulings |
 | [`manuscript/MODEL_PAPERS.md`](manuscript/MODEL_PAPERS.md) | How five OT theory articles are built, and a check of the six-phase table |

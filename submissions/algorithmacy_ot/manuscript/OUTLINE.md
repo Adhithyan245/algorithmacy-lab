@@ -72,7 +72,9 @@ triad; the turn to sensibility.
   *ASQ*, from the system's side. The claim has to be the narrowed one the Lima hearings left standing
   (flag A5).
 - Citations for every construct named (flag C4).
-- The Stelmaszak reading, once the full text is in (flag C1).
+- A corrected reading of Stelmaszak et al. (flag A6). They include the riders and reject
+  "counterpart"; what they leave untheorized is the tie between the humans, and the capacity of the
+  driver who "learn[s] how to change" — the narrower charge, and a better one.
 
 **Packet.** The seven hearings and `FINDINGS.md` in `../../lima_pdw/literature/steelmans/`; Table 1 of
 the Lima paper (`CARRYOVER.md`), which already sorts eight constructs by where each puts the human
@@ -152,7 +154,7 @@ section named for its content ("Out of Bounds", "Moving Forward").
 
 ## Sequencing
 
-1. The author rules on the flags (`FLAGS_2026-10-07.md`), at least A1–A5 and the genus question.
+1. The author rules on the flags (`FLAGS_2026-10-07.md`), at least A1–A6 and the genus question.
 2. Claude runs the research lines and cards what they find (`../RESEARCH_PLAN.md`).
 3. The author drafts section 4 first — it is the paper's core and the other sections lean on it —
    then 3, then 5 and 6, then returns to 1 and 2.

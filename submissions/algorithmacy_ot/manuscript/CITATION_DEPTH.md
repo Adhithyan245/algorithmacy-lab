@@ -14,8 +14,8 @@ source enters the draft. The Lima paper's table, for sources carried over, is
 | `porsfelt2026` | full_text | Yes. Pages 1–35. A genealogy; cite it for a direction it proposes, not a worked theory. | 2026-10-07 |
 | `starkvandenbroeck2024` | full_text | Yes. Re-read from the version of record; pages 1–24. The card predates the re-read and needs the corrections listed in `process/2026-10-07_stark_reread.md` §6. | 2026-10-07 |
 | `anthony2023` | abstract_only | **Position-only.** Paywalled. | 2026-10-07 |
-| `leonardileavell2026` | abstract_only | **Position-only.** No open copy found. | 2026-10-07 |
-| `stelmaszak2026` | abstract_only | **Position-only**, and section 2's critique of it goes past what the abstract supports (flag C1). Open access, but both copies sit behind a bot check. | card of 2026-08; not re-read |
+| `leonardileavell2026` | full_text | Yes. Version of record, supplied by the author; printed pages 516–543. Not about generative AI. | 2026-10-07 |
+| `stelmaszak2026` | full_text | Yes. Version of record, supplied by the author; printed pages 335–365. Cite as 2026, never "Stelmaszak et al., 2025" (flag A6). | 2026-10-07 |
 | `simmel1902` | see card | As in the Lima paper. | not re-checked |
 
 PDFs sit in `lima_pdw/literature/pdfs/` in the author's main checkout. They are gitignored and stay

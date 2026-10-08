@@ -25,10 +25,11 @@ for the research plan in `../../manuscript/RESEARCH_PLAN.md`.
 | `schoeneborn2026.pdf` | Schoeneborn, Dobusch & Seidl, *Organization Theory* 7(3). Dropped 2026-10-07, open-access version of record from `journals.sagepub.com` |
 | `porsfelt2026.pdf` | Porsfelt, Vestergaard & Hjorth, *Organization Theory* 7(3). Dropped 2026-10-07, open-access version of record from `journals.sagepub.com` |
 | `starkvandenbroeck2024.pdf` | Stark & Vanden Broeck, *Organization Theory* 5(2). Dropped 2026-10-07, open-access version of record from `journals.sagepub.com` |
+| `stelmaszak2026.pdf` | Stelmaszak, Joshi & Constantiou, *JMS* 63(2). Dropped 2026-10-07 by the author; version of record |
+| `leonardileavell2026.pdf` | Leonardi & Leavell, *Organization Science* 37(2). Dropped 2026-10-07 by the author; version of record with an INFORMS cover page, so printed page = PDF page + 514 |
 
-Wanted for the *Organization Theory* version (`../../../algorithmacy_ot/`), not obtained 2026-10-07:
-`stelmaszak2026.pdf` (open access, but Wiley and the CBS repository both answer with a bot check),
-`anthony2023.pdf` and `leonardileavell2026.pdf` (*Organization Science*, paywalled).
+Wanted for the *Organization Theory* version (`../../../algorithmacy_ot/`), not obtained:
+`anthony2023.pdf` (*Organization Science* 34(5), paywalled).
 
 Still missing: Spitzberg & Cupach (1984) book; the ACM PDF of Long & Magerko (2020); publisher
 PDFs of Spitzberg (2006) and Hancock et al. (2020), both read from Oxford's HTML but without page
