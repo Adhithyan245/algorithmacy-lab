@@ -28,7 +28,8 @@ preregistered study.
 
 ## Provenance
 
-The simulator source is not vendored. It lives in the standalone prototype `who-broke-prod`
-(`whobrokeprod/` package; local git commits `97dc432` hypotheses, `b08a2c3` code, `61ad8b0` results,
-2026-10-09). This directory reproduces every reported number from the saved run; regenerating the run
-itself requires that prototype.
+The simulator source is not vendored. It lives in the prototype repository
+[Adhithyan245/who-broke-prod](https://github.com/Adhithyan245/who-broke-prod) (`whobrokeprod/` package; commits [`97dc432`](https://github.com/Adhithyan245/who-broke-prod/commit/97dc432d9e238fe63622b1ab5393f975780e8ce3) hypotheses,
+[`b08a2c3`](https://github.com/Adhithyan245/who-broke-prod/commit/b08a2c34e74d0b956f70d5735ab0bf2983824be2) code, [`61ad8b0`](https://github.com/Adhithyan245/who-broke-prod/commit/61ad8b0a43528bb79a2085b042400784e19577a8) results, 2026-10-09; history published unmodified, including its
+placeholder commit author). This directory reproduces every reported number from the saved run; regenerating
+the run itself requires that prototype. Interactive demo of the simulator: <https://adhithyan245.github.io/who-broke-prod-demo/>.

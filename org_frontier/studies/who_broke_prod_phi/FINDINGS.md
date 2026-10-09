@@ -8,7 +8,7 @@ structure and accuracy therefore depends on a simulator setting that the structu
 Four of six hypotheses are supported and two are refuted.
 
 Evidence about the model, not about a real organization. Association across four designed conditions;
-no causal claim. Hypotheses fixed in `hypotheses.md` (commit `51d5f0e`) before the code (`3c07947`) and
+no causal claim. Hypotheses fixed in `hypotheses.md` (commit `976fd31`) before the code (`426efd3`) and
 before any computation.
 
 ## Instrument
