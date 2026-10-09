@@ -6545,6 +6545,21 @@
       ],
       "timeout": 180,
       "source": "org_frontier/studies/ergodic_gap_decomposition/FINDINGS.md"
+    },
+    {
+      "name": "who-broke-prod",
+      "cmd": "python org_frontier/studies/who_broke_prod/analyze_who_broke_prod.py",
+      "expect": [
+        "runs: 2400",
+        "H1 acc_full=0.6467 acc_claims_only=0.0967 diff=0.5500 p=9.144e-100: SUPPORTED",
+        "H2 false_blame_full=0.3433 false_blame_claims_only=0.8300: SUPPORTED",
+        "H3 fb_diff_claims_only=0.8300 fb_diff_full=0.3433: REFUTED",
+        "H4 mean_steps flat=1.4839 hub=2.0710 chain=1.5000: REFUTED",
+        "H5 acc_flat=0.7750 acc_chain=0.3900 diff=0.3850 p=1.323e-23: SUPPORTED",
+        "H6 acc_hub=0.7750 acc_flat=0.7750 diff=0.0000 p=1.000e+00: REFUTED"
+      ],
+      "timeout": 60,
+      "source": "org_frontier/studies/who_broke_prod/FINDINGS.md"
     }
   ]
 }
