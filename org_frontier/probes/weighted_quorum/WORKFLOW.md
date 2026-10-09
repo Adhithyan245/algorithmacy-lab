@@ -46,8 +46,11 @@ Times are US Eastern (UTC−4) on 2026-10-09.
 | 12:47 | Script committed after a display-only change (no-complex sentinel printed as `-`) | `621a9ec6` |
 | 12:47–12:51 | Full run (4 min 14 s); `results/run.txt`, `classes.csv`, `noise.csv` committed | `7e1eae4f` |
 | 12:51 | PROBES.md row 457 and two `ci/reproduce.json` checks committed | `6ac5b3d2` |
-| 12:52 onward | `python ci/reproduce.py` (full manifest) started; per-PR selection and index checks passed | — |
-| after 12:52 | `README.md` and this file committed in the final commit, whose hash cannot be quoted inside itself | — |
+| 12:52 | Per-PR check selection (`--changed-file`) and the three index `--check`s passed | — |
+| 12:53 | `README.md` and this file committed | `65050d18` |
+| 12:52–13:13 | `python ci/reproduce.py` (full manifest, 516 checks) ran for about 21 minutes, reached at least check 37 of 516, and was stopped as too slow for this session. Timing fields it rewrote in other studies' result files were restored with `git checkout` | — |
+| 13:13 | `python ci/reproduce.py probe-weighted-quorum-ci probe-weighted-quorum-full` passed (41.0 s, 262.1 s); the rerun left the committed CSVs unchanged | — |
+| 13:13 | Verification section updated in the final commit, whose hash cannot be quoted inside itself | — |
 
 ## Pre-commitment evidence
 
@@ -68,7 +71,10 @@ All checks below were run by the agent on its own machine.
 - `python -m org_frontier.classifier.validate`: `Instrument validated`.
 - `python ci/reproduce.py --changed-file` over the branch's changed paths: 7 checks, all pass, including
   `probe-weighted-quorum-ci`.
-- `python ci/reproduce.py probe-weighted-quorum-full`: see the pull-request text for the result.
+- `python ci/reproduce.py probe-weighted-quorum-ci probe-weighted-quorum-full`: both pass (41.0 s and
+  262.1 s).
+- The full manifest (`python ci/reproduce.py`, 516 checks) was not completed locally. It was stopped after
+  about 21 minutes, having reached at least check 37 of 516; the remaining checks were left to CI and the nightly job.
 - `python tools/build_index.py --check`, `python tools/build_map.py --check`,
   `python org_frontier/research/build_research_index.py --check`: all up to date. The root `README.md`
   and `MAP.md` were not changed.
