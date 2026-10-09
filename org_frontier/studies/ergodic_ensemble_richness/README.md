@@ -9,12 +9,19 @@ Track home: [`../../ergodicity/`](../../ergodicity/). Designed-panel predecessor
 
 ## Status
 
-**HYPOTHESES FIXED. NOT RUN.** Decision rules are in
-[`hypotheses.md`](hypotheses.md). The analysis script does not exist yet.
-No Φ number for this cell is claimed.
+**RUN.** Results in `results/forms.csv` and [`FINDINGS.md`](FINDINGS.md).
+Verdict `NO_ENSEMBLE_LINK`. H1 and H2 refuted under |ρ| ≥ 0.20. H3
+supported on the class-mean entropy gap. Hypotheses committed before the
+analysis script existed (`67f408ee`, then `12954695`).
 
 ## Question (one line)
 
 Across all 256 strict-mediation three-node forms, is exact Φ_MIP positively
 rank-correlated with basin entropy and with attractor count, past a
 pre-registered margin and a permutation null?
+
+## Run
+
+```
+python org_frontier/studies/ergodic_ensemble_richness/analyze_ensemble.py
+```
