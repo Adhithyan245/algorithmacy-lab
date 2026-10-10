@@ -4978,6 +4978,24 @@
       "source": "org_frontier/studies/logged_alt_duty_exact_phi/FINDINGS.md"
     },
     {
+      "name": "graded-channel-exact-phi",
+      "cmd": "python org_frontier/studies/graded_channel_exact_phi/analyze_graded.py",
+      "expect": [
+        "  faithful triad: triadic \u03a6=2.000000  PASS",
+        "  sticky:         dyadic \u03a6=0.000000  PASS",
+        "  H1 (controls replicate anchors):       SUPPORTED",
+        "  H2 (graded q=0.5 holds):              SUPPORTED",
+        "  H3 (smooth monotone degradation):     SUPPORTED",
+        "  H4 (graded beats alternation \u22650.10):  SUPPORTED",
+        "  H5 (logged panel replicates):         SUPPORTED",
+        "  verdict: GRADED_HOLDS",
+        "  reading: GRADED_HOLDS \u2014 the q=0.5 graded channel holds the exact-\u03a6 screen (1.000\u21920.853) where hard alternation cliffs (1.000\u21920.660); degradation is smooth, so the cliff tracks duty correlation, not channel granularity",
+        "  metrics: full_m=1.000; q75_m=1.000; q50_m=0.853; q25_m=0.824; alt_m=0.660; phase_m=1.000; full_l=1.000; q50_l=0.909; q25_l=0.864; alt_l=0.591; n_multi=24; n_logged=15; n_tri_m=17"
+      ],
+      "timeout": 300,
+      "source": "org_frontier/studies/graded_channel_exact_phi/FINDINGS.md"
+    },
+    {
       "name": "omit-cycle-band-n89",
       "cmd": "python org_frontier/studies/omit_cycle_band_n89/analyze_band_n89.py",
       "expect": [
