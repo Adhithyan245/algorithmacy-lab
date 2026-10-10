@@ -6545,6 +6545,50 @@
       ],
       "timeout": 180,
       "source": "org_frontier/studies/ergodic_gap_decomposition/FINDINGS.md"
+    },
+    {
+      "name": "probe-weighted-quorum-ci",
+      "cmd": "python -m org_frontier.probes.weighted_quorum.probe_weighted_quorum --ci",
+      "expect": [
+        "C1a factoring control (C decoupled): dyadic \u03a6=0.000000  PASS",
+        "C1a irreducible control (full coupling): triadic \u03a6=0.830075  PASS",
+        "C1b AND (3-of-3): triadic \u03a6=3.000000 core={S,P1,P2,P3}  PASS",
+        "C1b OR (1-of-3): triadic \u03a6=3.000000 core={S,P1,P2,P3}  PASS",
+        "C1b 2-of-3: dyadic \u03a6=0.000000 core=none  PASS",
+        "C1 passed.",
+        "n=3: 8 classes with weights 0..5; 8 with weights 0..6; saturated",
+        "n=4: 25 classes with weights 0..5; 25 with weights 0..6; saturated",
+        "scored n: [3, 4]; classes scored: 33; extreme |R|>=2: 10; mixed: 21; with an irrelevant party: 11",
+        "H1 (extreme classes bind {S}+R):              SUPPORTED  violations 0/10",
+        "H1b (core \u03c6 = |R| on extreme classes):         SUPPORTED  violations 0/10",
+        "H2 (irrelevant parties stay out of the core):  SUPPORTED  violations 0/33",
+        "H2b (irrelevant party -> whole-system dyadic): SUPPORTED  violations 0/11",
+        "H3 (mixed classes bind at most one party):     REFUTED  violations 2/21",
+        "H4 (single core party has the unique max \u03b2):   SUPPORTED  scorable 10, tied 0, violations 0",
+        "H3 violation: n4-18 w=(1, 1, 2, 2) \u03b8=2 type=mixed R={P1,P2,P3,P4} \u03b2=(1, 1, 3, 3) core={S,P3,P4} \u03c6=2.000000 whole=dyadic \u03a6=0.000000",
+        "H3 violation: n4-21 w=(1, 1, 2, 2) \u03b8=5 type=mixed R={P1,P2,P3,P4} \u03b2=(1, 1, 3, 3) core={S,P3,P4} \u03c6=2.000000 whole=dyadic \u03a6=0.000000"
+      ],
+      "timeout": 180,
+      "source": "org_frontier/probes/weighted_quorum/README.md"
+    },
+    {
+      "name": "probe-weighted-quorum-full",
+      "slow": true,
+      "cmd": "python -m org_frontier.probes.weighted_quorum.probe_weighted_quorum",
+      "expect": [
+        "C1 passed.",
+        "C2 (\u03b5=0 reproduces the deterministic readings): PASS",
+        "C3 (\u03b5=0.5 reads dyadic, no core with >=2 parties): PASS",
+        "H3 (mixed classes bind at most one party):     REFUTED  violations 2/21",
+        "n4-12  AND      4.0000    1.7661    0.9694    0.3689    0.1490    0.0491    0.0203    -*",
+        "n4-18  mixed    2.0000    1.5230    1.1350    0.5996    0.2881    0.1067    0.0464    -*",
+        "H5 (noise keeps extreme membership, \u03c6 non-increasing): SUPPORTED  violations 0",
+        "H6 (noise does not rescue a mixed quorum):             REFUTED  violations 12",
+        "H6 violation: n4-18 \u03b5=0.05 core={S,P3,P4} \u03c6=1.523037",
+        "H6 violation: n4-21 \u03b5=0.45 core={S,P3,P4} \u03c6=0.046396"
+      ],
+      "timeout": 900,
+      "source": "org_frontier/probes/weighted_quorum/README.md"
     }
   ]
 }
