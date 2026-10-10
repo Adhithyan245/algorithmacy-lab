@@ -332,6 +332,7 @@ Multi-experiment batteries on one theme.
 - **[Formal vs informal cut (agenda #46)](org_frontier/studies/formal_informal_cut/README.md)** — map onto dyadic/triadic. Formal spans both (commit gate vs
 - **[Genuine bistability (agenda #13)](org_frontier/studies/genuine_bistability/README.md)** — triadic and dyadic attractors — beyond #109's sticky-mediator activity
 - **[Gig substitution (#35)](org_frontier/studies/gig_substitution/README.md)** — individual worker drops from the major complex at the **first positive
+- **[Graded party channel vs Φ (V4 #11)](org_frontier/studies/graded_channel_exact_phi/README.md)** — channel? The mediating system reads each party through a lossy channel —
 - **[Graded commit verdict (agenda #2)](org_frontier/studies/graded_commit_verdict/README.md)** — (`S'=min(W,C)`, ternary) keeps **discrete** structure labels
 - **[Graded × topology carriers (V3 #11)](org_frontier/studies/graded_topo_carriers/README.md)** — (`x'=min(·)` / hub `S'=min(W,C)`) keeps **discrete** structure labels
 - **[HITL rubber stamp (#39)](org_frontier/studies/hitl_rubber_stamp/README.md)** — system commit, counterpart), the human joins the major complex **iff**
